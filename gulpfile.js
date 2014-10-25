@@ -18,5 +18,8 @@ elixir(function(mix) {
             '../resources/assets/js/foundation/foundation.js',
             '../resources/assets/js/app.js'
          ])
-       .styles('css/app.css');
+       .styles('css/app.css')
+       .version(['css/all.css',
+                 'js/all.js'
+               ]);
 });

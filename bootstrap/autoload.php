@@ -34,6 +34,20 @@ if (file_exists($compiled = __DIR__.'/compiled.php'))
 
 /*
 |--------------------------------------------------------------------------
+| Allow the use of the Elixir helper even though this is 4.2
+|--------------------------------------------------------------------------
+|
+| Laravel Elixir is an awesome tool included in Laravel 5.0. Since 5.0 is
+| not yet available, this allows Laravel Elixir to be used in Laravel 4.2
+| while still passing all automated integrated tests. If this file is not
+| included, tests will still pass locally, but not when run on Travis-CI.
+|
+*/
+
+require __DIR__.'/elixir_helper.php';
+
+/*
+|--------------------------------------------------------------------------
 | Setup Patchwork UTF-8 Handling
 |--------------------------------------------------------------------------
 |
