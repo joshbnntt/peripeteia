@@ -9,7 +9,7 @@
    <title>Welcome to Foundation</title>
 
    <!-- Stylesheet files-->
-   <link rel="stylesheet" href="{{ elixir("css/all.css") }}">
+   <link rel="stylesheet" href="css/all.css">
 
    <!-- JS to give older browsers HTML5 support -->
    {{ HTML::script('js/modernizr.js') }}
@@ -18,6 +18,6 @@
    @yield('content')
 
    <!-- Page scripts -->
-   <script src="{{ elixir("js/all.js") }}">
+   <script src="js/all.js">
 </body>
 </html>
