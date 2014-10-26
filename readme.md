@@ -11,7 +11,7 @@ Welcome to the Project Peri GitHub repository!! Hopefully you will enjoy all of 
 
 First things first: the main repository is called the **upstream**. There are two branches in this repository, and these are the only two that will always exist on the upstream. These branches are named *develop* and *master*. 
 
-Team members should never need work directly on the upstream. Github allows for us to *fork* a copy. (Be sure not to confuse forking and branching, they're very different). The benefit to this is that each person will have their own personal copy of the project to work on, including their very own git history. This also allows for a better development environment, since you can make changes on your fork without needing to worry about interfering with someone else's work.
+Team members should never work directly on the upstream. Github allows for us to *fork* a copy. (Be sure not to confuse forking and branching, they're very different). The benefit to this is that each person will have their own personal copy of the project to work on, including their very own git history. This also allows for a better development environment, since you can make changes on your fork without needing to worry about interfering with someone else's work.
 
 ## Fork Your Copy
 
@@ -49,8 +49,8 @@ Now that you've got that done, head back to your Homestead terminal, and run the
 ```
 git remote add origin git@github.com:<yourusername>/peripeteia.git
 git remote add upstream https://github.com/projectperi/peripeteia.git
-git fetch origin
 git checkout develop
+git fetch upstream
 git merge upstream/develop
 ```
 
@@ -63,8 +63,8 @@ git remote -v
 If you have 4 entries there, you've done it correctly! Now, you'll want to make sure you sync your code with the upstream code every time you start working. To do this, you'll run the following three commands:
 
 ```
-git fetch origin
 git checkout develop
+git fetch origin
 git merge upstream/develop
 ```
 
@@ -79,7 +79,15 @@ git fetch origin
 git checkout -b whatever-you-want-to-name-the-branch
 ```
 
-Note that this branch name should probably correspond to whatever the story is that you're working on in the branch. That will just make things easier.
+Now you can modify files, make changes, whatever you would normally do. When you're done, simply run the following commands:
+
+```
+git add .
+git commit -m "A relevant message"
+git push origin whatever-you-named-the-branch
+```
+
+Note that this branch name should probably correspond to whatever the story/feature is that you're working on in the branch. That will just make things easier.
 
 When you're done with this branch, and you're ready to merge it back into your develop branch, it is a good practice to first merge your target branch into your current branch to handle conflicts on the branch. This will prevent you from messing up your main develop branch on accident. So let's say you need to merge a login branch into develop... Here is what you would do:
 
@@ -104,8 +112,8 @@ Now then, let's say you get stuck on something while you're working on your stor
 1. Make sure you push your changes to your origin using:
 
 ```
-git add -A
-git commit -m "a relevant message to let everyone know what you changed"
+git add .
+git commit -m "A relevant message to let everyone know what you changed"
 git push origin whatever-you-want-to-name-the-branch
 ```
 
