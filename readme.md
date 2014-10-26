@@ -131,4 +131,4 @@ git merge upstream/develop
 
 That's all for now, more sections will be added later for your benefit! Thanks for reading! Keep the team values in mind, consider yourself an artisan, and **enjoy doing whatever it is you're doing!**
 
-## Happy coding, Peri-mates!
+### Happy coding, Peri-mates!
