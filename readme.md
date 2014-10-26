@@ -51,3 +51,5 @@ git merge upstream/master
 ```
 
 There you have it! Your code will now be up to date with the upstream repo.
+
+## Going Further
