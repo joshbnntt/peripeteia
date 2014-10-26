@@ -32,10 +32,22 @@ git config --global user.name "Firstname Lastname"
 git config --global user.email "youremail@whatever.blah"
 git config --global http.proxy "http://<id_number>:<password>@wsa2-sn.pcci.edu:3128"
 git config --global https.proxy "https://<id_number>:<password>@wsa2-sn.pcci.edu:3128"
+git config --global http.sslverify false
+git config --global https.sslverify false
 git init
-git remote add origin https://https://github.com/<yourusername>/peripeteia.git
-git pull origin master
+```
+
+Now, go to GitHub's website, and go to your account settings. Add a new SSH key, and name it whatever you like. This is what is going to allow you to push changes to GitHub via Homestead. The value is:
+```
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5ONn1I5VpwfDcnfUCBEw7NM+mzo2Bb5km17FxTaX+ULt3ior9EJrk0/iU8WegIuT5MMTEPu0n9oPQ7gBPUzNVPeXCuDNqrynaOmZT6qFpDXhOIF1KtiUnzv4I3BpBD9HkGS2fjH+0vNJcce6kCsDWsJEPna15nUygILMGYkBke0zy8WtH1ZzvAAVTtCZuhV43ZtR5hMymPT77sjNlNY+zIFtWT4pzG5EYlUGNJoBop+/fqGppFZvtlXEoI7yGBXx3xmqiXWPouqdsSUbCCeZJXPXKToePSY7+7hsG77VVLQHc/2Wfw3qcNPlKo2aPd6imcyTcxdqTpbLHKlgaYg6P Project Peri
+```
+
+Now that you've got that done, head back to your Homestead command prompt and run the following commands:
+
+```
+git remote add origin git@github.com:<yourusername>/peripeteia.git
 git remote add upstream https://github.com/projectperi/peripeteia.git
+git pull origin master
 ```
 
 Congratulations! You now have your own copy that is synced with GitHub, and you've also set up a way that you can keep your code up to date with the upstream repo. Check that you've set this up correctly by running:
