@@ -47,7 +47,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/rWGf6j13M+DsmBrThHtNFn6YjPQjUk+5ADgYqkyE
 Now that you've got that done, head back to your Homestead terminal, and run the following commands:
 
 ```
-git remote add origin git@github.com:<yourusername>/peripeteia.git
+git remote add origin https://github.com/<yourusername>/peripeteia.git
 git remote add upstream https://github.com/projectperi/peripeteia.git
 git checkout develop
 git fetch upstream
