@@ -41,7 +41,7 @@ git init
 Now, go to GitHub's website, and go to your account settings. Add a new SSH key, and name it whatever you like. This is what is going to allow you to push changes to GitHub via Homestead. The value is:
 
 ```
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5ONn1I5VpwfDcnfUCBEw7NM+mzo2Bb5km17FxTaX+ULt3ior9EJrk0/iU8WegIuT5MMTEPu0n9oPQ7gBPUzNVPeXCuDNqrynaOmZT6qFpDXhOIF1KtiUnzv4I3BpBD9HkGS2fjH+0vNJcce6kCsDWsJEPna15nUygILMGYkBke0zy8WtH1ZzvAAVTtCZuhV43ZtR5hMymPT77sjNlNY+zIFtWT4pzG5EYlUGNJoBop+/fqGppFZvtlXEoI7yGBXx3xmqiXWPouqdsSUbCCeZJXPXKToePSY7+7hsG77VVLQHc/2Wfw3qcNPlKo2aPd6imcyTcxdqTpbLHKlgaYg6P Project Peri
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/rWGf6j13M+DsmBrThHtNFn6YjPQjUk+5ADgYqkyEoMaCVtsqziGrPro82LmyDNVDXW+dTHX2MN1Dwivpk4z1xIZiDp1BkO4gbujGnRTqVCUKxr3M4G0IFOXZ3yLdvFlmzAqXomdhSx5U1VpXMP1mWaz959sHh62VAJmR4jiM/2EUHL3ew8ZmxPj4DmBjtnNQ8hQqsBqJNZbm0eqqKwIJngBcELY76SIsKdBRmFs5Jb8XhgUX2Xo4fsh9YZgLLyjaiv11l2OfG3wiKjemsqrR/du1SkMOTq8maFWdMGe4FgxXOVLxqJ9NdH7AhaTYN29+PH/RPY4uGnzzzkbcE8Nv Project Peri
 ```
 
 Now that you've got that done, head back to your Homestead terminal, and run the following commands:
