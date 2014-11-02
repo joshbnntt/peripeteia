@@ -15,3 +15,10 @@ $app['router']->get('/', function() use ($app)
 {
    return View::make('hello');
 });
+Route::get('/feat', function()
+{
+   return View::make('feat');
+});
+Route::get('login', 'SessionsController@create');
+Route::get('logout', 'SessionsController@delete');
+Route::resource('session', 'SessionsController');
