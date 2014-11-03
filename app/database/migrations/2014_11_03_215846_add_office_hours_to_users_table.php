@@ -13,8 +13,7 @@ class AddOfficeHoursToUsersTable extends Migration {
 	public function up()
 	{
 		Schema::table('users', function(Blueprint $table)
-		{
-			// Comment to test git
+        {
             $table->string('office_hours');
 		});
 	}
