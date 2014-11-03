@@ -16,7 +16,7 @@
 </div>      
 <div class="row">      
       <div class="large-4 columns">
-           {{Form::submit('Login')}}
+           {{Form::submit('Login', ['class' => 'small button'])}}
       </div>
    {{Form::close()}}
 </div>   

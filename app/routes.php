@@ -11,13 +11,19 @@
 |
 */
 
-$app['router']->get('/', function() use ($app)
+Route::get('/', 'HomeController@showWelcome');
+Route::get('/new', function()
 {
-   return View::make('hello');
+   User::create([
+         'username' => 'joshbnntt',
+         'email'    => 'joshbnntt@peri.com',
+         'password' => Hash::make('1234')
+   ]);
+   return User::all();
 });
 Route::get('/feat', function()
 {
-   return View::make('feat');
+   return User::all();
 });
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@delete');

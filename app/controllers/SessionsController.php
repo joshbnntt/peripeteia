@@ -4,12 +4,17 @@ class SessionsController extends BaseController{
    {
       return View::make('sessions.create');
    }
+   public function delete()
+   {
+      Auth::logout();
+      return Redirect::to('login');
+   }
    
    public function store()
    {
       if(Auth::attempt(Input::only('email', 'password')))
       {
-         return Auth::user();
+         return Redirect::intended('');
       }
       return 'failed!';
    }
