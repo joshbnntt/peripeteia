@@ -10,8 +10,11 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-Route::get('/', 'HomeController@showWelcome');
+Route::get('profile', function()
+{
+   return "Weclome " . Auth::user()->email;
+});
+Route::get('/', 'HomeController@showWelcome')->before('auth');
 Route::get('/new', function()
 {
    User::create([
@@ -25,6 +28,6 @@ Route::get('/feat', function()
 {
    return User::all();
 });
-Route::get('login', 'SessionsController@create');
+Route::get('login', 'SessionsController@create')->before('guest');
 Route::get('logout', 'SessionsController@delete');
 Route::resource('session', 'SessionsController');
