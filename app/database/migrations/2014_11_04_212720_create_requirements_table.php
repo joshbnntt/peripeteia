@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateMiscellaneousTable extends Migration {
+class CreateRequirementsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,11 @@ class CreateMiscellaneousTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('miscellaneous', function(Blueprint $table)
+		Schema::create('requirements', function(Blueprint $table)
 		{
 			$table->increments('id');
             $table->string('title');
-            $table->longText('text');
+            $table->longText('description');
 			$table->timestamps();
 		});
 	}
@@ -29,7 +29,7 @@ class CreateMiscellaneousTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('miscellaneous');
+		Schema::drop('requirements');
 	}
 
 }
