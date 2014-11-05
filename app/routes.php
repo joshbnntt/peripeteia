@@ -18,8 +18,8 @@ Route::get('/', 'HomeController@showWelcome')->before('auth');
 Route::get('/new', function()
 {
    User::create([
-         'username' => 'joshbnntt',
-         'email'    => 'joshbnntt@peri.com',
+         'username' => 'Joshua',
+         'email'    => 'jdbnc93@aol.com',
          'password' => Hash::make('1234')
    ]);
    return User::all();
