@@ -31,3 +31,4 @@ Route::get('/feat', function()
 Route::get('login', 'SessionsController@create')->before('guest');
 Route::get('logout', 'SessionsController@delete');
 Route::resource('session', 'SessionsController');
+Route::controller('password', 'RemindersController');

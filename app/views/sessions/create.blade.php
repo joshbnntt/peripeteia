@@ -2,22 +2,27 @@
 
 @section('content')
 <div class="row">
+@if (Session::has('login_errors'))
+  <span class="error">Username or password incorrect.</span>
+@endif
    {{Form::open(['route' => 'session.store']) }}
       <div class="large-4 columns">
-         {{Form::label('email', 'Email:')}}
-         {{Form::email('email')}}
+         {{ $errors->first('email') }}
+         {{ Form::label('email', 'Email:') }}
+         {{ Form::email('email') }}
       </div>
 </div>      
 <div class="row">      
       <div class="large-4 columns">
-         {{Form::label('password', 'Password:')}}
-         {{Form::password('password')}}
+         {{ $errors->first('password') }}
+         {{ Form::label('password', 'Password:') }}
+         {{ Form::password('password') }}
       </div>
 </div>      
 <div class="row">      
       <div class="large-4 columns">
-           {{Form::submit('Login', ['class' => 'small button'])}}
+           {{ Form::submit('Login', ['class' => 'small button']) }}
       </div>
-   {{Form::close()}}
+   {{ Form::close() }}
 </div>   
 @stop
