@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateOutlineSummariesTable extends Migration {
+class CreateOutlineEvaluationsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,13 @@ class CreateOutlineSummariesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('outline_summaries', function(Blueprint $table)
+		Schema::create('outline_evaluations', function(Blueprint $table)
 		{
 			$table->increments('id');
             $table->integer('outline_id')->unsigned();
             $table->foreign('outline_id')->references('id')->on('outlines');
-            $table->integer('summary_id')->unsigned();
-            $table->foreign('summary_id')->references('id')->on('summaries');
+            $table->integer('evaluation_id')->unsigned();
+            $table->foreign('evaluation_id')->references('id')->on('evaluations');
 			$table->timestamps();
 		});
 	}
@@ -31,7 +31,7 @@ class CreateOutlineSummariesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('outline_summaries');
+		Schema::drop('outline_evaluations');
 	}
 
 }
