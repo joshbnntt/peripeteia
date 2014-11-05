@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateSummariesTable extends Migration {
+class CreateOutcomesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,9 @@ class CreateSummariesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('summaries', function(Blueprint $table)
+		Schema::create('outcomes', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->integer('week')->nullable();
-            $table->string('day')->nullable();
-            $table->integer('lecture')->nullable();
             $table->longText('description');
 			$table->timestamps();
 		});
@@ -31,7 +28,7 @@ class CreateSummariesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('summaries');
+		Schema::drop('outcomes');
 	}
 
 }

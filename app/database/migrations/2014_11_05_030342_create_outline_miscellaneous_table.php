@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateMiscellaneousElementsTable extends Migration {
+class CreateOutlineMiscellaneousTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateMiscellaneousElementsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('miscellaneous_elements', function(Blueprint $table)
+		Schema::create('outline_miscellaneous', function(Blueprint $table)
 		{
 			$table->increments('id');
             $table->integer('miscellaneous_id')->unsigned();
@@ -31,7 +31,7 @@ class CreateMiscellaneousElementsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('miscellaneous_elements');
+		Schema::drop('outline_miscellaneous');
 	}
 
 }
