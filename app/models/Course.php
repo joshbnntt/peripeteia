@@ -1,7 +1,7 @@
 <?php
 
 class Course extends eloquent {
-    protected $fillable = array();
+    protected $fillable = array('name', 'number');
     
     /**
 	 * The database table used by the model.
