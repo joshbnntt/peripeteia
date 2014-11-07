@@ -17,7 +17,13 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('hello');
+		// if(Auth::check())
+		// 	return 'yo';//Auth::user()->email;
+		// if (Auth::check())
+	 //   {
+	      return View::make('hello');
+	   // }
+   	// return Redirect::to('/login');
 	}
 
 }
