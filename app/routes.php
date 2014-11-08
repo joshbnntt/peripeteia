@@ -10,11 +10,8 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::get('profile', function()
-{
-   return "Weclome " . Auth::user()->email;
-});
-Route::get('/', 'HomeController@showWelcome')->before('auth');
+
+/*Route::get('/', 'HomeController@showWelcome')->before('auth');
 Route::get('/new', function()
 {
    User::create([
@@ -31,4 +28,47 @@ Route::get('/feat', function()
 Route::get('login', 'SessionsController@create')->before('guest');
 Route::get('logout', 'SessionsController@delete');
 Route::resource('session', 'SessionsController');
-Route::controller('password', 'RemindersController');
+Route::controller('password', 'RemindersController');*/
+
+/*
+|--------------------------------------------------------------------------
+| Page Routes
+|--------------------------------------------------------------------------
+*/
+Route::get ('/',     'PageController@index');
+Route::get ('login', 'PageController@login');
+
+
+/*
+|--------------------------------------------------------------------------
+| Course Outline Routes
+|--------------------------------------------------------------------------
+*/
+Route::group(array('before' => 'auth'), function()
+{
+   Route::get ('courseoutline/create', array(
+         'uses' => 'CourseOutlineController@create'
+      )
+   );
+   Route::get ('courseoutline/show', array(
+         'uses' => 'CourseOutlineController@show'
+      )
+   );
+   Route::post('courseoutline/store', array(
+         'uses' => 'CourseOutlineController@store'
+      )
+   );
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Auth Routes
+|--------------------------------------------------------------------------
+*/
+Route::post('login', 'AuthController@validate');
+Route::get ('logout', array(
+      'before' => 'auth',
+      'uses' => 'AuthController@logout'
+   )
+);
