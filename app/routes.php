@@ -34,9 +34,11 @@ App::missing(function($exception)
 | Page Routes
 |--------------------------------------------------------------------------
 */
-// Route::get ('/',     'PageController@index');
 Route::get ('login', 'PageController@login');
 
+Route::group(array('prefix' => 'api'), function() {
+   Route::resource('display', 'PageController@display');
+});   
 
 /*
 |--------------------------------------------------------------------------
@@ -90,21 +92,3 @@ Route::get('/new', function()
       ]);
    return 'hi';
 });
-/*Route::get('/', 'HomeController@showWelcome')->before('auth');
-Route::get('/new', function()
-{
-   User::create([
-         'username' => 'Joshua',
-         'email'    => 'jdbnc93@aol.com',
-         'password' => Hash::make('1234')
-   ]);
-   return User::all();
-});
-Route::get('/feat', function()
-{
-   return User::all();
-});
-Route::get('login', 'SessionsController@create')->before('guest');
-Route::get('logout', 'SessionsController@delete');
-Route::resource('session', 'SessionsController');
-Route::controller('password', 'RemindersController');*/

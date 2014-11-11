@@ -8,7 +8,7 @@ class PageController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function display()
 	{
 		$course_names = $course_outlines = array_slice(scandir(public_path().'/courseoutlines'), 2);
 
@@ -18,7 +18,7 @@ class PageController extends BaseController {
 				                             $course_names[$iterator]);
 		}
 
-		return View::make('pages.home')->withCourseOutlines($course_outlines)->withCourseNames($course_names);
+		return Response::json($course_outlines);
 	}
 
 	/**

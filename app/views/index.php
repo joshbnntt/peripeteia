@@ -5,6 +5,7 @@
    <head>
       <meta http-equiv="Content-Type"  content="charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="<?php echo elixir("css/all.css") ?>">
       <?php echo HTML::script('js/modernizr.js') ?>
    </head>
 
@@ -18,5 +19,6 @@
       <?php echo HTML::script('app/vender/angular-route.js') ?>
       <?php echo HTML::script('app/application.js') ?>
       <?php echo HTML::script('app/components/home/HomeController.js') ?>
+      <?php echo HTML::script('app/components/home/HomeService.js') ?>
    </body>
 </html>
