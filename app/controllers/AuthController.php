@@ -45,7 +45,7 @@ class AuthController extends BaseController {
 	public function validate()
 	{
 		$rules = [
-			'username' => 'required',
+			'email' => 'required|email',
 			'password' => 'required|alphaNum|min:3'
 		];
 
@@ -55,7 +55,7 @@ class AuthController extends BaseController {
 			return Redirect::to('login')->withErrors($validator)->withInput(Input::except('password'));
 		} else {
 			$userdata = [
-				'username' => Input::get('username'),
+				'email' => Input::get('email'),
 				'password' => Input::get('password')
 			];
 		}

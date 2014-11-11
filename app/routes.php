@@ -11,31 +11,30 @@
 |
 */
 
-/*Route::get('/', 'HomeController@showWelcome')->before('auth');
-Route::get('/new', function()
+/*
+|--------------------------------------------------------------------------
+| Angular Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/', function()
 {
-   User::create([
-         'username' => 'Joshua',
-         'email'    => 'jdbnc93@aol.com',
-         'password' => Hash::make('1234')
-   ]);
-   return User::all();
+   return View::make('index'); // will return app/views/index.php
 });
-Route::get('/feat', function()
+
+/*
+|  Not Best practice. add controller to catch these routes
+*/
+App::missing(function($exception)
 {
-   return User::all();
+   return View::make('index');
 });
-Route::get('login', 'SessionsController@create')->before('guest');
-Route::get('logout', 'SessionsController@delete');
-Route::resource('session', 'SessionsController');
-Route::controller('password', 'RemindersController');*/
 
 /*
 |--------------------------------------------------------------------------
 | Page Routes
 |--------------------------------------------------------------------------
 */
-Route::get ('/',     'PageController@index');
+// Route::get ('/',     'PageController@index');
 Route::get ('login', 'PageController@login');
 
 
@@ -72,3 +71,40 @@ Route::get ('logout', array(
       'uses' => 'AuthController@logout'
    )
 );
+
+/*
+|--------------------------------------------------------------------------
+| Miscellanious Routes
+|--------------------------------------------------------------------------
+|
+| Routes that will most likely get removed before merging with production
+|
+*/
+Route::get('/new', function()
+{
+   User::create([
+         'first_name' => 'Joshua',
+         'last_name' => 'Bennett',
+         'email'  => 'jdbnc93@aol.com',
+         'password' => Hash::make('1234')
+      ]);
+   return 'hi';
+});
+/*Route::get('/', 'HomeController@showWelcome')->before('auth');
+Route::get('/new', function()
+{
+   User::create([
+         'username' => 'Joshua',
+         'email'    => 'jdbnc93@aol.com',
+         'password' => Hash::make('1234')
+   ]);
+   return User::all();
+});
+Route::get('/feat', function()
+{
+   return User::all();
+});
+Route::get('login', 'SessionsController@create')->before('guest');
+Route::get('logout', 'SessionsController@delete');
+Route::resource('session', 'SessionsController');
+Route::controller('password', 'RemindersController');*/

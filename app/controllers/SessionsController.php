@@ -10,7 +10,37 @@ class SessionsController extends BaseController{
    {
       $this->user = $user;
    }
+/**
+   * Validate the entered use credentials
+   * POST /login
+   *
+   * @return Response
+   */
+  public function validate()
+  {
+     $rules = [
+        'username' => 'required',
+        'password' => 'required|alphaNum|min:3'
+     ];
 
+     $validator = Validator::make(Input::all(), $rules);
+
+     if($validator->fails()) {
+        return Redirect::to('login')->withErrors($validator)->withInput(Input::except('password'));
+     } else {
+        $userdata = [
+           'username' => Input::get('username'),
+           'password' => Input::get('password')
+        ];
+     }
+
+     if(Auth::attempt($userdata)) {
+        return Redirect::intended('/');
+     } else {
+        return Redirect::to('login');
+     }
+     return;
+  }
    /* Pulls up the login page and starts a session to hold their data */
    public function create()
    {
