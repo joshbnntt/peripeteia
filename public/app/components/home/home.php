@@ -8,8 +8,9 @@
                   </tr>
                </thead>
                <tbody>
-                     <tr ng-repeat='outlines in course_outlines'>
-                        <td> {{ outlines }}</td>
+                     <tr ng-repeat='(title, path) in course_outlines'>
+                        <td> {{ title }}</td>
+                        <td><a href="courseoutlines/{{ path }}">{{ title }} </a></td>
                      </tr>
                </tbody>
             </table>

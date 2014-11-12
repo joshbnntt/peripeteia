@@ -20,5 +20,7 @@
       <?php echo HTML::script('app/application.js') ?>
       <?php echo HTML::script('app/components/home/HomeController.js') ?>
       <?php echo HTML::script('app/components/home/HomeService.js') ?>
+      <?php echo HTML::script('app/components/courseOutlineForm/CourseOutlineController.js') ?>
+      <?php echo HTML::script('app/components/home/CourseOutlineService.js') ?>
    </body>
 </html>

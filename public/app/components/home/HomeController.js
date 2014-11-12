@@ -1,5 +1,5 @@
-app.controller('HomeController', function($scope, $http, CourseOutline) {
-  CourseOutline.display()
+app.controller('HomeController', function($scope, $http, Display) {
+   Display.display()
          .success(function(data) {
             $scope.course_outlines = data;
          });

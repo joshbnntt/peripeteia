@@ -1,5 +1,5 @@
 app.service('HomeService', [])
-   .factory('CourseOutline', function($http) {
+   .factory('Display', function($http) {
       return {
          // get all the comments
          display : function() {
