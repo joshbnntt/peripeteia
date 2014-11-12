@@ -7,7 +7,8 @@
 		"laravel/framework": "4.2.*",
 		"barryvdh/laravel-dompdf": "0.4.*",
 		"barryvdh/laravel-ide-helper": "1.*",
-		"laravelbook/ardent": "2.*"
+		"laravelbook/ardent": "2.*",
+		"tappleby/laravel-auth-token": "0.3.*"
 	},
    "require-dev": {
       "way/generators": "~2.0",
