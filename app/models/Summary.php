@@ -1,6 +1,6 @@
 <?php
 
-class Summary extends eloquent {
+class Summary extends Eloquent {
     protected $fillable = array('outline_id', 'week', 'day', 'lecture', 'description');
     
     /**

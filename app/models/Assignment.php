@@ -1,6 +1,6 @@
 <?php
 
-class Assignment extends eloquent {
+class Assignment extends Eloquent {
     protected $fillable = array('outline_id', 'due_date', 'description', 'type');
     
     /**

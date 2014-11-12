@@ -1,6 +1,6 @@
 <?php
 
-class Outcome extends eloquent {
+class Outcome extends Eloquent {
     protected $fillable = array('outline_id', 'description');
     
     /**

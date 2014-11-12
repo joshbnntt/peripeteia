@@ -1,6 +1,6 @@
 <?php
 
-class Outline extends eloquent {
+class Outline extends Eloquent {
     protected $fillable = array('instructor_id', 'course_id', 'credit_hours', 'catalog_description', 'description', 'course_requirements');
     
     /**

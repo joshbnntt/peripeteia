@@ -1,6 +1,6 @@
 <?php
 
-class Requirement extends eloquent {
+class Requirement extends Eloquent {
     protected $fillable = array('outline_id', 'title', 'description');
     
     /**

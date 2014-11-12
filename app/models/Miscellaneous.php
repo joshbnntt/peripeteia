@@ -1,6 +1,6 @@
 <?php
 
-class Miscellaneous extends eloquent {
+class Miscellaneous extends Eloquent {
 	protected $fillable = array('outline_id', 'title', 'text');
 
     /**

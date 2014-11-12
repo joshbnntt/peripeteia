@@ -1,6 +1,6 @@
 <?php
 
-class Evaluation extends eloquent {
+class Evaluation extends Eloquent {
     protected $fillable = array('outline_id', 'percent', 'name');
     
     /**

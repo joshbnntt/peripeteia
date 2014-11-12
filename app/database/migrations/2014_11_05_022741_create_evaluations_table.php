@@ -15,8 +15,10 @@ class CreateEvaluationsTable extends Migration {
 		Schema::create('evaluations', function(Blueprint $table)
 		{
 			$table->increments('id');
+            $table->integer('outline_id')->unsigned()->indexed();
+            $table->foreign('outline_id')->references('id')->on('outlines');
             $table->integer('percent');
-            $table->string('type');
+            $table->string('name');
 			$table->timestamps();
 		});
 	}
