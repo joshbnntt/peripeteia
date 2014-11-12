@@ -17,6 +17,9 @@ class CreateCoursesTable extends Migration {
 			$table->increments('id');
             $table->string('name')->index();
             $table->string('number')->index();
+            $table->longText('general_info');
+            $table->longText('specific_info');
+            $table->longText('accrediting_info');
 			$table->timestamps();
 		});
 	}
