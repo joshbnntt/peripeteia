@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
       'Way\Generators\GeneratorsServiceProvider',
       'Barryvdh\DomPDF\ServiceProvider',
+      'Tappleby\AuthToken\AuthTokenServiceProvider',
 	),
 
 	/*
@@ -154,6 +155,9 @@ return array(
 		'App'             => 'Illuminate\Support\Facades\App',
 		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
 		'Auth'            => 'Illuminate\Support\Facades\Auth',
+		'AuthToken'       => 'Tappleby\Support\Facades\AuthToken',
+		'AuthTokenNotAuthorizedException'
+		                  => 'Tappleby\AuthToken\Exceptions\NotAuthorizedException',
 		'Blade'           => 'Illuminate\Support\Facades\Blade',
 		'Cache'           => 'Illuminate\Support\Facades\Cache',
 		'ClassLoader'     => 'Illuminate\Support\ClassLoader',
