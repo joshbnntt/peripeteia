@@ -10,6 +10,7 @@
    </head>
 
    <body ng-controller="HomeController">
+   <div peri-topbar></div>
       <!-- Main page content -->
       <div id="main">
          <div ng-view></div>
@@ -21,6 +22,7 @@
       <?php echo HTML::script('app/components/home/HomeController.js') ?>
       <?php echo HTML::script('app/components/home/HomeService.js') ?>
       <?php echo HTML::script('app/components/courseOutlineForm/CourseOutlineController.js') ?>
-      <?php echo HTML::script('app/components/home/CourseOutlineService.js') ?>
+      <?php echo HTML::script('app/components/courseOutlineForm/CourseOutlineService.js') ?>
+      <?php echo HTML::script('app/shared/directives/periTopbar.js') ?>
    </body>
 </html>

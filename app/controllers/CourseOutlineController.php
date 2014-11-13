@@ -31,13 +31,14 @@ class CourseOutlineController extends BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{
+	{ 
 		$courseInfo = Input::all();
 		$courseInfo['course_outcomes'] = explode("\n", $courseInfo['course_outcomes']);
 		PDF::loadView('pdfs.test',
 			array('courseInfo' => $courseInfo))->save(public_path().'/courseoutlines/'.$courseInfo['course_name'] .'.pdf');
 			//. stud_case($courseInfo['course_name']).'.pdf');
-		return Redirect::action('CourseOutlineController@show')->with('courseInfo', $courseInfo);
+		//return Redirect::action('CourseOutlineController@show')->with('courseInfo', $courseInfo);
+		return Response::json('/courseoutlines/'.$courseInfo['course_name'] .'.pdf');
 	}
 
 	/**

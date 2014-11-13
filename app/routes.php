@@ -43,28 +43,6 @@ Route::group(array('prefix' => 'api'), function() {
 
 /*
 |--------------------------------------------------------------------------
-| Course Outline Routes
-|--------------------------------------------------------------------------
-*/
-Route::group(array('before' => 'auth'), function()
-{
-   Route::get ('courseoutline/create', array(
-         'uses' => 'CourseOutlineController@create'
-      )
-   );
-   Route::get ('courseoutline/show', array(
-         'uses' => 'CourseOutlineController@show'
-      )
-   );
-   Route::post('courseoutline/store', array(
-         'uses' => 'CourseOutlineController@store'
-      )
-   );
-});
-
-
-/*
-|--------------------------------------------------------------------------
 | Auth Routes
 |--------------------------------------------------------------------------
 */

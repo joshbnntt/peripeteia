@@ -1,4 +1,4 @@
-   <div class="row">
+   <div class="row" style="margin-top:50px;">
       <div class="small-12 large-centered columns">
             <table style="width: 100%; margin-top: 20px;">
                <thead>
@@ -10,7 +10,7 @@
                <tbody>
                      <tr ng-repeat='(title, path) in course_outlines'>
                         <td> {{ title }}</td>
-                        <td><a href="courseoutlines/{{ path }}">{{ title }} </a></td>
+                        <td><a href="courseoutlines/{{ path }}" target="_self">{{ title }} </a></td>
                      </tr>
                </tbody>
             </table>
