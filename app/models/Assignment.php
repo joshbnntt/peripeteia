@@ -1,16 +1,29 @@
 <?php
 
-class Assignment extends Eloquent {
-    protected $fillable = array('outline_id', 'due_date', 'description', 'type');
+use LaravelBook\Ardent\Ardent;
+
+class Assignment extends Ardent {
+   protected $fillable = array('outline_id', 'due_date', 'description', 'type');
     
-    /**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	 protected $table =  "assignments";
-    
-    public function outline(){
-       return $this->belongsTo('Outline');
-    }
+   /**
+	* The database table used by the model.
+	*
+	* @var string
+	*/
+   protected $table =  "assignments";
+
+   /**
+    * Ardent validation rules
+    */
+   public static $rules = array(
+      'due_date'    => 'date',
+      'description' => 'required'
+   );
+
+   /**
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    */
+   public function getOutline(){
+     return $this->belongsTo('Outline');
+   }
 }
