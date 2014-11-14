@@ -12,10 +12,10 @@ class AssignmentsTableSeeder extends Seeder {
 		foreach(range(1, 10) as $index)
 		{
 			Assignment::create([
-                'outline_id'  => $faker->numberBetween(1, 10),
-                'due_date'    => $faker->dateTime(),
-                'description' => $faker->paragraph(),
-                'type'        => $faker->word()
+            'outline_id'  => $faker->numberBetween(1, 10),
+            'due_date'    => $faker->dateTime(),
+            'description' => $faker->paragraph(),
+            'type'        => $faker->word()
 			]);
 		}
 	}

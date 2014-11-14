@@ -12,9 +12,9 @@ class EvaluationsTableSeeder extends Seeder {
 		foreach(range(1, 10) as $index)
 		{
 			Evaluation::create([
-                'outline_id' => $faker->numberBetween(1, 10),
-                'percent'    => $faker->numberBetween(1, 100),
-                'name'       => $faker->word()
+            'outline_id' => $faker->numberBetween(1, 10),
+            'percent'    => $faker->numberBetween(1, 100),
+            'name'       => $faker->word()
 			]);
 		}
 	}

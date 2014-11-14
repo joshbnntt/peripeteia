@@ -2,7 +2,7 @@
 use LaravelBook\Ardent\Ardent;
 
 class Evaluation extends Ardent {
-    protected $fillable = array('outline_id', 'percent', 'name');
+   protected $fillable = array('outline_id', 'percent', 'name');
     
    /**
 	 * The database table used by the model.

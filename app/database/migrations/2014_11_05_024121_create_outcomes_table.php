@@ -15,9 +15,9 @@ class CreateOutcomesTable extends Migration {
 		Schema::create('outcomes', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->integer('outline_id')->unsigned()->indexed();
-            $table->foreign('outline_id')->references('id')->on('outlines');
-            $table->longText('description');
+         $table->integer('outline_id')->unsigned()->indexed();
+         $table->foreign('outline_id')->references('id')->on('outlines');
+         $table->longText('description');
 			$table->timestamps();
 		});
 	}
