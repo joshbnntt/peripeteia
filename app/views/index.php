@@ -16,8 +16,8 @@
          <div ng-view></div>
       </div>
 
-      <?php echo HTML::script('app/vender/angular.min.js') ?>
-      <?php echo HTML::script('app/vender/angular-route.js') ?>
+      <?php echo HTML::script('app/vendor/angular.min.js') ?>
+      <?php echo HTML::script('app/vendor/angular-route.js') ?>
       <?php echo HTML::script('app/application.js') ?>
       <?php echo HTML::script('app/components/home/HomeController.js') ?>
       <?php echo HTML::script('app/components/home/HomeService.js') ?>

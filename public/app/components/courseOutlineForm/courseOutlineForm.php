@@ -46,4 +46,9 @@
       </div>
       </form>
    </div>
+   <div class="row">
+      <div class="large-12">
+         <p>{{ answer }}</p>
+      </div>
+   </div>
    </div>
