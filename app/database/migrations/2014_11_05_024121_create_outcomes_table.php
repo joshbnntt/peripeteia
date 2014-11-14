@@ -22,7 +22,6 @@ class CreateOutcomesTable extends Migration {
 		});
 	}
 
-
 	/**
 	 * Reverse the migrations.
 	 *

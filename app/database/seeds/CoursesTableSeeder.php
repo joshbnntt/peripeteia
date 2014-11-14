@@ -12,8 +12,11 @@ class CoursesTableSeeder extends Seeder {
 		foreach(range(1, 10) as $index)
 		{
 			Course::create([
-                'name'   => $faker->word,
-                'number' => $faker->bothify('?? ###')
+                'name'                    => $faker->word,
+                'number'                  => $faker->bothify('??###'),
+                'general_information'     => $faker->paragraph(),
+                'specific_information'    => $faker->paragraph(),
+                'accrediting_information' => $faker->paragraph()
 			]);
 		}
 	}

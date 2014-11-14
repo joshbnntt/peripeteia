@@ -15,8 +15,7 @@ class OutlinesTableSeeder extends Seeder {
                 'instructor_id'       => $faker->numberBetween(1, 10),
                 'course_id'           => $faker->numberBetween(1, 10),
                 'credit_hours'        => $faker->numberBetween(1, 4),
-                'description'         => $faker->paragraph(),
-                'course_requirements' => $faker->paragraph()
+                'description'         => $faker->paragraph()
 			]);
 		}
 	}

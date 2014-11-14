@@ -1,6 +1,7 @@
 <?php
+use LaravelBook\Ardent\Ardent;
 
-class Requirement extends Eloquent {
+class Requirement extends Ardent {
     protected $fillable = array('outline_id', 'title', 'description');
     
     /**
@@ -10,6 +11,18 @@ class Requirement extends Eloquent {
 	 */
 	 protected $table =  "requirements";
 
+   /**
+    * Ardent validation rules
+    */
+   public static $rules = array(
+      'outline_id'  => 'required|numeric',
+      'title'       => 'required',
+      'description' => 'required'
+   );
+
+   /**
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    */
     public function outline(){
        return $this->belongsTo('Outline');
     }
