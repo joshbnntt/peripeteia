@@ -15,8 +15,9 @@ class Evaluation extends Ardent {
     * Ardent validation rules
     */
    public static $rules = array(
-      'name'     => 'required|alpha',
-      'percent'  => 'required|numeric|between:0,100'
+      'outline_id' => 'required|numeric',
+      'name'       => 'required|alpha',
+      'percent'    => 'required|numeric|between:0,100'
    );
 
    /**

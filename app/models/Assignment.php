@@ -16,6 +16,7 @@ class Assignment extends Ardent {
     * Ardent validation rules
     */
    public static $rules = array(
+      'outline_id'  => 'required|numeric',
       'due_date'    => 'date',
       'description' => 'required'
    );

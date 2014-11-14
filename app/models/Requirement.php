@@ -15,6 +15,7 @@ class Requirement extends Ardent {
     * Ardent validation rules
     */
    public static $rules = array(
+      'outline_id'  => 'required|numeric',
       'title'       => 'required',
       'description' => 'required'
    );

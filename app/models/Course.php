@@ -2,7 +2,7 @@
 use LaravelBook\Ardent\Ardent;
 
 class Course extends Ardent {
-   protected $fillable = array('name', 'number', 'general_info', 'specific_info', 'accrediting_info');
+   protected $fillable = array('name', 'number', 'general_information', 'specific_information', 'accrediting_information');
     
    /**
 	 * The database table used by the model.
@@ -15,11 +15,11 @@ class Course extends Ardent {
     * Ardent validation rules
     */
    public static $rules = array(
-      'name'             => 'required|alpha',
-      'number'           => 'required|alpha_num',
-      'general_info'     => 'required',
-      'specific_info'    => 'required',
-      'accrediting_info' => 'required'
+      'name'                    => 'required|alpha',
+      'number'                  => 'required|alpha_num',
+      'general_information'     => 'required',
+      'specific_information'    => 'required',
+      'accrediting_information' => 'required'
    );
 
    /**

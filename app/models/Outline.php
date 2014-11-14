@@ -15,7 +15,9 @@ class Outline extends Ardent {
     * Ardent validation rules
     */
    public static $rules = array(
-      'credit_hours' => 'required|numeric|between:1,5'
+      'instructor_id' => 'required|numeric',
+      'course_id'     => 'required|numeric',
+      'credit_hours'  => 'required|numeric|between:1,5'
    );
 
     //Owns

@@ -15,6 +15,7 @@ class Outcome extends Ardent {
     * Ardent validation rules
     */
    public static $rules = array(
+      'outline_id'  => 'required|numeric',
       'description' => 'required',
    );
 

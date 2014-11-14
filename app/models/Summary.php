@@ -15,16 +15,17 @@ class Summary extends Ardent {
     * Ardent validation rules
     */
    public static $rules = array(
+      'outline_id'  => 'required|numeric',
       'description' => 'required',
       'week'        => 'numeric',
       'day'         => 'numeric',
-      'lecture'     => 'lecture'
+      'lecture'     => 'numeric'
    );
 
    /**
     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
     */
-    public function outline(){
-       return $this->belongsTo('Outline');
-    }
+   public function outline(){
+      return $this->belongsTo('Outline');
+   }
 }

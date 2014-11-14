@@ -15,8 +15,9 @@ class Miscellaneous extends Ardent {
     * Ardent validation rules
     */
    public static $rules = array(
-      'title' => 'required',
-      'text'  => 'required'
+      'outline_id' => 'required|numeric',
+      'title'      => 'required',
+      'text'       => 'required'
    );
 
    /**
