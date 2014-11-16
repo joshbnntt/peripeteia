@@ -15,8 +15,8 @@ class CreateEvaluationsTable extends Migration {
 		Schema::create('evaluations', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->integer('percent');
-            $table->string('type');
+         $table->integer('percent');
+         $table->string('type');
 			$table->timestamps();
 		});
 	}

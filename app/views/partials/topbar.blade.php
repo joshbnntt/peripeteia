@@ -22,7 +22,7 @@
         @if(!Auth::check())
           <li class="active"><a href="{{ URL::to('login') }}">Login</a></li>
         @else
-          <li class="active"><a href="{{ URL::to('logout') }}">Logout</a></li>
+          <li class="active"><a href="{{ URL::to('api/logout') }}">Logout</a></li>
         @endif
         </ul>
       </section>

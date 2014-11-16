@@ -15,7 +15,7 @@ class CreateOutcomesTable extends Migration {
 		Schema::create('outcomes', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->longText('description');
+         $table->longText('description');
 			$table->timestamps();
 		});
 	}

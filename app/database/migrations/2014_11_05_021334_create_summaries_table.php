@@ -15,10 +15,10 @@ class CreateSummariesTable extends Migration {
 		Schema::create('summaries', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->integer('week')->nullable();
-            $table->string('day')->nullable();
-            $table->integer('lecture')->nullable();
-            $table->longText('description');
+         $table->integer('week')->nullable();
+         $table->string('day')->nullable();
+         $table->integer('lecture')->nullable();
+         $table->longText('description');
 			$table->timestamps();
 		});
 	}

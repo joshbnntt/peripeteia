@@ -13,11 +13,36 @@
 
 /*
 |--------------------------------------------------------------------------
+| API v1 Routes
+|--------------------------------------------------------------------------
+*/
+Route::api(['version' => 'v1', 'prefix' => 'api', 'protected' => true], function()
+{
+   Route::post('login', [
+      'uses' => 'AuthController@validate', 
+      'protected' => false
+   ]);
+
+   Route::get('logout', [
+      'uses' => 'AuthController@logout',
+      'protected' => false
+   ]);
+
+   Route::get('users', function()
+   {
+      $users = $this->api->get('users');
+
+          return View::make('users.all')->with('users', $users);
+   });
+});
+
+/*
+|--------------------------------------------------------------------------
 | Page Routes
 |--------------------------------------------------------------------------
 */
 Route::get ('/',     'PageController@index');
-Route::get ('login', 'PageController@login');
+Route::get('login', 'PageController@login');
 
 
 /*
@@ -40,16 +65,3 @@ Route::group(array('before' => 'auth'), function()
       )
    );
 });
-
-
-/*
-|--------------------------------------------------------------------------
-| Auth Routes
-|--------------------------------------------------------------------------
-*/
-Route::post('login', 'AuthController@validate');
-Route::get ('logout', array(
-      'before' => 'auth',
-      'uses' => 'AuthController@logout'
-   )
-);

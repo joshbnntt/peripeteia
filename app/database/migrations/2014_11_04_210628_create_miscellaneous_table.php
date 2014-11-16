@@ -15,8 +15,8 @@ class CreateMiscellaneousTable extends Migration {
 		Schema::create('miscellaneous', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('title');
-            $table->longText('text');
+         $table->string('title');
+         $table->longText('text');
 			$table->timestamps();
 		});
 	}
