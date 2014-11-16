@@ -15,6 +15,8 @@ class CreateAssignmentsTable extends Migration {
 		Schema::create('assignments', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('outline_id')->unsigned()->indexed();
+         $table->foreign('outline_id')->references('id')->on('outlines');
          $table->date('due_date')->nullable();
          $table->longText('description');
          $table->string('type')->nullable();
