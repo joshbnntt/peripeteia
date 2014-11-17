@@ -32,11 +32,30 @@ class CourseOutlineController extends BaseController {
 	 */
 	public function store()
 	{ 
-		$courseInfo = Input::all();
-		$courseInfo['course_outcomes'] = explode("\n", $courseInfo['course_outcomes']);
+		/*$outline = Outline::firstOrCreate([
+			'instructor_id' => '3',
+			'course_id'     => '9',
+			'credit_hours'  => '4'
+		]);
+		$outline
+		return $outline;
+
+		$submitted_info = Input::all();
+
+		$outline->course->name = 'Intro to Programming';
+		$outline->course->number = 'CS 202';
+		$outline->course->general_information = 'Intro to Programming';
+		$outline->course->specific_information = 'Intro to Programming';
+		$outline->course->accrediting_information = 'Intro to Programming';
+		$outline->instructor = 1;
+		$outline->credit_hours = 3;*/
+
+		$submitted_info = Input::all();
+		$submitted_info['course_outcomes'] = explode("\n", $submitted_info['course_outcomes']);
+
 		PDF::loadView('pdfs.test',
-	      array('courseInfo' => $courseInfo))->save(public_path().'/courseoutlines/'.studly_case($courseInfo['course_name']).'.pdf');
-		return Response::json('/courseoutlines/'.studly_case($courseInfo['course_name']).'.pdf');
+	      array('submitted_info' => $submitted_info))->save(public_path().'/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
+		return Response::json('/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
 	}
 
 	/**

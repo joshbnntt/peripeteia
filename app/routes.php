@@ -38,6 +38,9 @@ Route::get ('login', 'PageController@login');
 
 Route::group(array('prefix' => 'api'), function() {
    Route::resource('display', 'PageController@display');
+   Route::resource('testCourseSearch', 'PageController@testCourseNameSearch');
+   Route::resource('testInstructorSearch', 'PageController@testInstructorSearch');
+   Route::resource('testDescriptionSearch', 'PageController@testDescriptionSearch');
    Route::resource('courseoutline', 'CourseOutlineController', array('only' => array('create', 'store', 'show')));
 });   
 

@@ -2,7 +2,6 @@ app.controller('CourseOutlineController', function($scope, $http, $window, $loca
   $scope.master = {};
   $scope.create = function()
   {
-      $scope.master = angular.copy($scope.outline);
       $scope.answer = "loading";
       CourseOutline.save($scope.outline)
          .success(function(data)

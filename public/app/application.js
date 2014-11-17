@@ -1,4 +1,4 @@
-var app = angular.module('peri', ['ngRoute']);
+var app = angular.module('peri', ['ngRoute', 'angucomplete']);
 
 app.config(function($routeProvider, $locationProvider) {
    $routeProvider

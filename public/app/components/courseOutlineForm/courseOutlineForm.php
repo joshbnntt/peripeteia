@@ -1,16 +1,36 @@
-   <div class="row" style="margin-top:50px;">
-   <form ng-submit="create()" >
+   <div class="row" style="margin-top:50px;" >
+   <form>
    <div class="small-12 large-6 columns">
       <fieldset>
          <legend>General Information</legend>
             <label for="course_name">Course Name</label>
-            <input type="text" ng-model="outline.course_name" name="course_name" id="course_name" placeholder="E.G. Life of David"> 
+            <div angucomplete 
+               id="course_name" 
+               placeholder="E.G. Life in Christ" 
+               pause="100" 
+               selectedobject="outline['course_name']" 
+               url="/api/testCourseSearch?s="
+               searchfields="number,name" 
+               titlefield="number,name" 
+               minlength="1" 
+               inputclass="form-control form-control-small"/>
+            <div smarty-suggestions-box></div>
 
             <label for="credit_hours">Credit Hours</label>
             <input type="text" ng-model="outline.credit_hours" name="credit_hours" id="credit_hours" placeholder="E.G. 3">
 
             <label for="instructor_name">Instructor Name</label>
-            <input type="text" ng-model="outline.instructor_name" name="instructor_name" id="instructor_name" placeholder="E.G. Mr. Stew Foster">
+            <div angucomplete 
+               id="instructor_name" 
+               placeholder="E.G. Mr. Stew Foster" 
+               pause="100" 
+               selectedobject="outline['instructor_name']" 
+               url="/api/testInstructorSearch?s="
+               searchfields="first_name,last_name" 
+               titlefield="first_name,last_name" 
+               minlength="1" 
+               inputclass="form-control form-control-small"/>
+            <div smarty-suggestions-box></div>
 
             <label for="office_location">Office Location</label>
             <input type="text" ng-model="outline.office_location" name="office_location" id="office_location" placeholder="E.G. AC 501">
@@ -48,7 +68,8 @@
    </div>
    <div class="row">
       <div class="large-12">
-         <p>{{ answer }}</p>
+         <p>{{ master | json }}</p>
+         <p>{{ a }}</p>
       </div>
    </div>
    </div>
