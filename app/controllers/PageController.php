@@ -49,9 +49,9 @@ class PageController extends BaseController {
 
 		foreach($users as $user)
 		{
-			if(str_contains(strtolower($user->first_name), $search ))
+			if(str_contains(strtolower($user->first_name), $search ) || str_contains(strtolower($user->last_name), $search ))
 			{
-				$results[] = $user;
+				$results[] = ['first_name' => $user->first_name, 'last_name' => $user->last_name ];
 			}
 		}
 
@@ -67,7 +67,7 @@ class PageController extends BaseController {
 		{
 			if(str_contains(strtolower($course->name), $search ))
 			{
-				$results[] = $course;
+				$results[] = ['name' => $course->name];
 			}
 		}
 

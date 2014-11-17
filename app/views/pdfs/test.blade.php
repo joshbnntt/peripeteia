@@ -37,19 +37,19 @@
                <b>Email: </b>
             </td>
             <td width="80%">
-               {{ $courseInfo['course_name'] }}<br />
-               {{ $courseInfo['credit_hours'] }}<br />
-               {{ $courseInfo['instructor_name'] }}<br />
-               {{ $courseInfo['office_location'] }}<br />
-               {{ $courseInfo['office_hours'] }}<br />
-               {{ $courseInfo['email'] }}
+               {{ $submitted_info['course_name'] }}<br />
+               {{ $submitted_info['credit_hours'] }}<br />
+               {{ $submitted_info['instructor_name'] }}<br />
+               {{ $submitted_info['office_location'] }}<br />
+               {{ $submitted_info['office_hours'] }}<br />
+               {{ $submitted_info['email'] }}
             </td>
          </tr>
          <tr>
             <td colspan="2">
                <br /><br />
                <div class="hanging-indent">
-                  <b>Catalog Description: </b>{{ $courseInfo['course_description'] }}
+                  <b>Catalog Description: </b>{{ $submitted_info['course_description'] }}
                </div>
             </td>
          </tr>
@@ -57,7 +57,7 @@
             <td colspan="2">
                <br />
                <div class="hanging-indent">
-                  <b>Prerequisites: </b>{{ $courseInfo['course_prerequisites'] }}
+                  <b>Prerequisites: </b>{{ $submitted_info['course_prerequisites'] }}
                </div>
             </td>
          </tr>
@@ -65,7 +65,7 @@
             <td colspan="2">
                <br />
                <div class="hanging-indent">
-                  <b>Required Texts: </b>{{ $courseInfo['course_texts'] }}
+                  <b>Required Texts: </b>{{ $submitted_info['course_texts'] }}
                </div>
             </td>
          </tr>
@@ -74,7 +74,7 @@
                <br />
                <div class="hanging-indent">
                   <b>Learning Outcomes - </b>Upon completing this course, students will be able to:<br />
-                  @foreach($courseInfo['course_outcomes'] as $outcome)
+                  @foreach($submitted_info['course_outcomes'] as $outcome)
                      <div class="numbered-list" style="margin: 0">{{ $outcome; }}</div>
                   @endforeach
                </div>

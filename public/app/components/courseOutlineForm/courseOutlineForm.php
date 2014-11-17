@@ -10,8 +10,8 @@
                pause="100" 
                selectedobject="outline['course_name']" 
                url="/api/testCourseSearch?s="
-               searchfields="number,name" 
-               titlefield="number,name" 
+               searchfields="name" 
+               titlefield="name" 
                minlength="1" 
                inputclass="form-control form-control-small"/>
             <div smarty-suggestions-box></div>
@@ -68,8 +68,8 @@
    </div>
    <div class="row">
       <div class="large-12">
-         <p>{{ master | json }}</p>
-         <p>{{ a }}</p>
+         <p>{{ answer }}</p>
+         <p>{{ a | json}}</p>
       </div>
    </div>
    </div>

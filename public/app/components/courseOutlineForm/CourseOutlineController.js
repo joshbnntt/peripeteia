@@ -3,7 +3,10 @@ app.controller('CourseOutlineController', function($scope, $http, $window, $loca
   $scope.create = function()
   {
       $scope.answer = "loading";
-      CourseOutline.save($scope.outline)
+      $scope.a = angular.copy($scope.outline);
+      $scope.a['course_name'] = $scope.a['course_name']['title'];
+      $scope.a['instructor_name'] = $scope.a['instructor_name']['title'];
+      CourseOutline.save($scope.a)
          .success(function(data)
          {
             $window.location.href = data;
