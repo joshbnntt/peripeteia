@@ -1,7 +1,7 @@
 # Project Peripeteia (Peri)
 
 [![Build Status](https://travis-ci.org/projectperi/peripeteia.svg?branch=master)](https://travis-ci.org/projectperi/peripeteia)
-[![Latest Unstable Version](http://img.shields.io/badge/Unstable-0.1.3-orange.svg)](https://github.com/bcarroll22/peripeteia)
+[![Latest Unstable Version](http://img.shields.io/badge/Unstable-0.1.4-orange.svg)](https://github.com/bcarroll22/peripeteia)
 
 ## Introduction
 

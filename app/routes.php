@@ -13,6 +13,7 @@
 
 /*
 |--------------------------------------------------------------------------
+<<<<<<< HEAD
 | Angular Routes
 |--------------------------------------------------------------------------
 */
@@ -20,6 +21,38 @@ Route::get('/', function()
 {
    return View::make('index'); // will return app/views/index.php
 });
+=======
+| API v1 Routes
+|--------------------------------------------------------------------------
+*/
+Route::api(['version' => 'v1', 'prefix' => 'api', 'protected' => true], function()
+{
+   Route::post('login', [
+      'uses' => 'AuthController@validate', 
+      'protected' => false
+   ]);
+
+   Route::get('logout', [
+      'uses' => 'AuthController@logout',
+      'protected' => false
+   ]);
+
+   Route::get('users', function()
+   {
+      $users = $this->api->get('users');
+
+          return View::make('users.all')->with('users', $users);
+   });
+});
+
+/*
+|--------------------------------------------------------------------------
+| Page Routes
+|--------------------------------------------------------------------------
+*/
+Route::get ('/',     'PageController@index');
+Route::get('login', 'PageController@login');
+>>>>>>> 5867cb01d2db15ac460226b8506b6711db8e1057
 
 /*
 |  Not Best practice. add controller to catch these routes
@@ -34,6 +67,7 @@ App::missing(function($exception)
 | Page Routes
 |--------------------------------------------------------------------------
 */
+<<<<<<< HEAD
 Route::get ('login', 'PageController@login');
 
 Route::group(array('prefix' => 'api'), function() {
@@ -71,3 +105,20 @@ Route::get('/new', function()
       ]);
    return 'hi';
 });
+=======
+Route::group(array('before' => 'auth'), function()
+{
+   Route::get ('courseoutline/create', array(
+         'uses' => 'CourseOutlineController@create'
+      )
+   );
+   Route::get ('courseoutline/show', array(
+         'uses' => 'CourseOutlineController@show'
+      )
+   );
+   Route::post('courseoutline/store', array(
+         'uses' => 'CourseOutlineController@store'
+      )
+   );
+});
+>>>>>>> 5867cb01d2db15ac460226b8506b6711db8e1057
