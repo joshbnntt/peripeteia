@@ -32,11 +32,47 @@ class CourseOutlineController extends BaseController {
 	 */
 	public function store()
 	{ 
-		$courseInfo = Input::all();
-		$courseInfo['course_outcomes'] = explode("\n", $courseInfo['course_outcomes']);
+		/*$outline = Outline::firstOrCreate([
+			'instructor_id' => '3',
+			'course_id'     => '9',
+			'credit_hours'  => '4'
+		]);
+		$outline
+		return $outline;
+
+		$submitted_info = Input::all();
+
+		$outline->course->name = 'Intro to Programming';
+		$outline->course->number = 'CS 202';
+		$outline->course->general_information = 'Intro to Programming';
+		$outline->course->specific_information = 'Intro to Programming';
+		$outline->course->accrediting_information = 'Intro to Programming';
+		$outline->instructor = 1;
+		$outline->credit_hours = 3;*/
+
+		$submitted_info = Input::all();
+		$rules = [
+			'course_outcomes'      => 'required|alpha_num|max:500',
+			'course_name'          => 'required|alpha_num',
+			'credit_hours'         => 'required|numeric',
+			'instructor_name'      => 'required|alpha_num',
+			'office_location'      => 'required|alpha_num',
+			'office_hours'         => 'required|alpha_num',
+			'email'                => 'required|email',
+			'course_description'   => 'required|alpha_num',
+			'course_prerequisites' => 'required|alpha_num',
+			'course_texts'         => 'required|alpha_num',
+			'course_outcomes'      => 'required|alpha_num'
+		];
+		$validator = Validator::make($submitted_info, $rules);
+
+		if($validator->fails()) {
+			return Response::json(['errors' => $validator->errors()]);
+		}
+		$submitted_info['course_outcomes'] = explode("\n", $submitted_info['course_outcomes']);
 		PDF::loadView('pdfs.test',
-	      array('courseInfo' => $courseInfo))->save(public_path().'/courseoutlines/'.studly_case($courseInfo['course_name']).'.pdf');
-		return Response::json('/courseoutlines/'.studly_case($courseInfo['course_name']).'.pdf');
+	      array('submitted_info' => $submitted_info))->save(public_path().'/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
+		return Response::json('/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
 	}
 
 	/**

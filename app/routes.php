@@ -13,49 +13,8 @@
 
 /*
 |--------------------------------------------------------------------------
-<<<<<<< HEAD
-| Angular Routes
+|  Not Best practice. Catch all routes, send them to angular.
 |--------------------------------------------------------------------------
-*/
-Route::get('/', function()
-{
-   return View::make('index'); // will return app/views/index.php
-});
-=======
-| API v1 Routes
-|--------------------------------------------------------------------------
-*/
-Route::api(['version' => 'v1', 'prefix' => 'api', 'protected' => true], function()
-{
-   Route::post('login', [
-      'uses' => 'AuthController@validate', 
-      'protected' => false
-   ]);
-
-   Route::get('logout', [
-      'uses' => 'AuthController@logout',
-      'protected' => false
-   ]);
-
-   Route::get('users', function()
-   {
-      $users = $this->api->get('users');
-
-          return View::make('users.all')->with('users', $users);
-   });
-});
-
-/*
-|--------------------------------------------------------------------------
-| Page Routes
-|--------------------------------------------------------------------------
-*/
-Route::get ('/',     'PageController@index');
-Route::get('login', 'PageController@login');
->>>>>>> 5867cb01d2db15ac460226b8506b6711db8e1057
-
-/*
-|  Not Best practice. add controller to catch these routes
 */
 App::missing(function($exception)
 {
@@ -64,61 +23,26 @@ App::missing(function($exception)
 
 /*
 |--------------------------------------------------------------------------
-| Page Routes
+| Angular Routes
 |--------------------------------------------------------------------------
 */
-<<<<<<< HEAD
-Route::get ('login', 'PageController@login');
-
-Route::group(array('prefix' => 'api'), function() {
-   Route::resource('display', 'PageController@display');
-   Route::resource('courseoutline', 'CourseOutlineController', array('only' => array('create', 'store', 'show')));
-});   
+Route::get('/', function()
+{
+   return View::make('index'); // will return app/views/index.php
+});
 
 /*
 |--------------------------------------------------------------------------
-| Auth Routes
+| API v1 Routes
 |--------------------------------------------------------------------------
 */
-Route::post('login', 'AuthController@validate');
-Route::get ('logout', array(
-      'before' => 'auth',
-      'uses' => 'AuthController@logout'
-   )
-);
-
-/*
-|--------------------------------------------------------------------------
-| Miscellanious Routes
-|--------------------------------------------------------------------------
-|
-| Routes that will most likely get removed before merging with production
-|
-*/
-Route::get('/new', function()
+Route::api(['version' => 'v1', 'prefix' => 'api', 'protected' => true], function()
 {
-   User::create([
-         'first_name' => 'Joshua',
-         'last_name' => 'Bennett',
-         'email'  => 'jdbnc93@aol.com',
-         'password' => Hash::make('1234')
-      ]);
-   return 'hi';
+   Route::post('login', ['uses' => 'AuthController@validate', 'protected' => false]);
+   Route::get('logout', ['uses' => 'AuthController@logout']);
+   Route::get('display', ['uses' => 'PageController@display']);
+   Route::get('testCourseSearch', ['uses' => 'PageController@testCourseNameSearch']);
+   Route::get('testInstructorSearch', ['uses' => 'PageController@testInstructorSearch']);
+   Route::get('testDescriptionSearch', ['uses' => 'PageController@testDescriptionSearch']);
+   Route::resource('courseoutline', ['uses' => 'CourseOutlineController', ['only' => ['create', 'store', 'show']]);
 });
-=======
-Route::group(array('before' => 'auth'), function()
-{
-   Route::get ('courseoutline/create', array(
-         'uses' => 'CourseOutlineController@create'
-      )
-   );
-   Route::get ('courseoutline/show', array(
-         'uses' => 'CourseOutlineController@show'
-      )
-   );
-   Route::post('courseoutline/store', array(
-         'uses' => 'CourseOutlineController@store'
-      )
-   );
-});
->>>>>>> 5867cb01d2db15ac460226b8506b6711db8e1057

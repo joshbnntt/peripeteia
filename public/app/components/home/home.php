@@ -1,4 +1,4 @@
-   <div class="row" style="margin-top:50px;">
+<div class="row" style="margin-top:50px;">
       <div class="small-12 large-centered columns">
             <table style="width: 100%; margin-top: 20px;">
                <thead>
@@ -15,4 +15,4 @@
                </tbody>
             </table>
       </div>
-   </div> 
+   </div>
