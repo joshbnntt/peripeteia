@@ -31,7 +31,7 @@ App::missing(function($exception)
 
 /*
 |--------------------------------------------------------------------------
-| Page Routes
+| Api Routes
 |--------------------------------------------------------------------------
 */
 Route::get ('login', 'PageController@login');
@@ -42,35 +42,4 @@ Route::group(array('prefix' => 'api'), function() {
    Route::resource('testInstructorSearch', 'PageController@testInstructorSearch');
    Route::resource('testDescriptionSearch', 'PageController@testDescriptionSearch');
    Route::resource('courseoutline', 'CourseOutlineController', array('only' => array('create', 'store', 'show')));
-});   
-
-/*
-|--------------------------------------------------------------------------
-| Auth Routes
-|--------------------------------------------------------------------------
-*/
-Route::post('login', 'AuthController@validate');
-Route::get ('logout', array(
-      'before' => 'auth',
-      'uses' => 'AuthController@logout'
-   )
-);
-
-/*
-|--------------------------------------------------------------------------
-| Miscellanious Routes
-|--------------------------------------------------------------------------
-|
-| Routes that will most likely get removed before merging with production
-|
-*/
-Route::get('/new', function()
-{
-   User::create([
-         'first_name' => 'Joshua',
-         'last_name' => 'Bennett',
-         'email'  => 'jdbnc93@aol.com',
-         'password' => Hash::make('1234')
-      ]);
-   return 'hi';
-});
+}); 
