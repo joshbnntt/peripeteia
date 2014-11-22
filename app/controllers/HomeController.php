@@ -17,13 +17,17 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		// if(Auth::check())
-		// 	return 'yo';//Auth::user()->email;
-		// if (Auth::check())
-	 //   {
+		//*******************************************************
+		// If logged in, show welcome page
+		// else redirect to login page
+
+		// Auth check not working properly, not sure why.
+		// if !Auth::check() always puts the user through
+		// but thats not what we want, and thats not how
+		// its supposed to work: check returns true if logged in
+		//*******************************************************
+
 	      return View::make('hello');
-	   // }
-   	// return Redirect::to('/login');
 	}
 
 }

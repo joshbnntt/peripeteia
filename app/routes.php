@@ -11,20 +11,63 @@
 |
 */
 
-Route::get('/', 'HomeController@showWelcome');
+/*
+|--------------------------------------------------------------------------
+| Angular Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/', function()
+{
+   return View::make('index'); // will return app/views/index.php
+});
+
+/*
+|  Not Best practice. add controller to catch these routes
+*/
+App::missing(function($exception)
+{
+   return View::make('index');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Page Routes
+|--------------------------------------------------------------------------
+*/
+Route::get ('login', 'PageController@login');
+
+Route::group(array('prefix' => 'api'), function() {
+   Route::resource('display', 'PageController@display');
+   Route::resource('courseoutline', 'CourseOutlineController', array('only' => array('create', 'store', 'show')));
+});   
+
+/*
+|--------------------------------------------------------------------------
+| Auth Routes
+|--------------------------------------------------------------------------
+*/
+Route::post('login', 'AuthController@validate');
+Route::get ('logout', array(
+      'before' => 'auth',
+      'uses' => 'AuthController@logout'
+   )
+);
+
+/*
+|--------------------------------------------------------------------------
+| Miscellanious Routes
+|--------------------------------------------------------------------------
+|
+| Routes that will most likely get removed before merging with production
+|
+*/
 Route::get('/new', function()
 {
    User::create([
-         'username' => 'joshbnntt',
-         'email'    => 'joshbnntt@peri.com',
+         'first_name' => 'Joshua',
+         'last_name' => 'Bennett',
+         'email'  => 'jdbnc93@aol.com',
          'password' => Hash::make('1234')
-   ]);
-   return User::all();
+      ]);
+   return 'hi';
 });
-Route::get('/feat', function()
-{
-   return User::all();
-});
-Route::get('login', 'SessionsController@create');
-Route::get('logout', 'SessionsController@delete');
-Route::resource('session', 'SessionsController');
