@@ -7,18 +7,24 @@ class CoursesTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
+		DB::table('courses')->delete();
 
-		foreach(range(1, 10) as $index)
-		{
-			Course::create([
-            'name'                    => $faker->word,
-            'number'                  => $faker->bothify('??###'),
-            'general_information'     => $faker->paragraph(),
-            'specific_information'    => $faker->paragraph(),
-            'accrediting_information' => $faker->paragraph()
-			]);
-		}
+      $json         = File::get(storage_path() . "/courses.json");
+      $json_decoded = json_decode($json, true);
+
+      foreach($json_decoded as $key => $value)
+      {
+         for($i = 0; $i < count($value); $i++)
+         {
+            Course::create([
+               'name'                    => $value[$i]['courseName'],
+               'credit_hours'            => $value[$i]['creditHours'],
+               'general_information'     => $value[$i]['courseDescription'],
+               'specific_information'    => $value[$i]['courseDescription'],
+               'accrediting_information' => $value[$i]['courseDescription']
+            ]);
+         }
+      }
 	}
 
 }

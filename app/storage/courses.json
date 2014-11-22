@@ -1536,6 +1536,7 @@
       },
       {
          "courseName":"EE 301–330",
+         "creditHours":"",
          "coursePrereq":"Teaching methods courses are open to junior and senior elementaryeducation majors who have at least “C” in EE 201.",
          "courseNote":"",
          "courseDescription":"Important components of each methods course are the observation of experienced teachers and the peer teaching experiences. Each course includes a weekly practice lab experience."
@@ -1661,6 +1662,7 @@
       },
       {
          "courseName":"SE 304–317",
+         "creditHours":"",
          "coursePrereq":"Prereq. for all SE 300-level courses: At least “C” in SE 201, junior or senior, course descriptions\t215 major in secondary education, and 12 hours in a teaching field with at least “C” must be completed before taking the 300-level teaching methods course in that field. Other unique prereqs. noted beside applicable courses below.",
          "courseNote":"",
          "courseDescription":"Secondary education majorsobserve, learn, practice, and perform the traditionalmethodology pertaining to each field. Included arephilosophy, teaching tools, and techniques for eachfield as well as classroom management techniques,test and visual construction, and lesson planning.Important components of each methods course arethe observation of experienced teachers and thepeer teaching experiences. The goal is a thoroughpreparation for the teaching internship and ultimatelythe Christian school secondary classroom."
@@ -3576,102 +3578,119 @@
    "Physical Education":[
       {
          "courseName":"PE 101/111 Soccer/Volleyball",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"Spring sem.",
          "courseDescription":""
       },
       {
          "courseName":"PE 102/112 Basketball/Softball",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"Fall sem.",
          "courseDescription":""
       },
       {
          "courseName":"PE 105 Beginning Soccer",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"Spring sem.",
          "courseDescription":""
       },
       {
          "courseName":"PE 106 Intermediate Soccer",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"Spring sem.",
          "courseDescription":""
       },
       {
          "courseName":"PE 107/117 Beginning Volleyball",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 108/118 Intermediate Volleyball",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 109/119 Track/Field",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"Fall sem./Every",
          "courseDescription":""
       },
       {
          "courseName":"PE 121/131 Beginning Basketball",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"Spring sem.",
          "courseDescription":""
       },
       {
          "courseName":"PE 122/136 Intermediate Basketball",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"Spring sem.",
          "courseDescription":""
       },
       {
          "courseName":"PE 124/134 Softball",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"Spring sem.",
          "courseDescription":""
       },
       {
          "courseName":"PE 125/135 Racquetball",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 127/137 Broom Hockey",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 175 Soccer/Speedball",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"Fall sem.",
          "courseDescription":""
       },
       {
          "courseName":"PE 182/132 Badminton",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 193 Ice Skating",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 201/211 Beginning Tennis",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 202/212 Intermediate Tennis",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
@@ -3685,48 +3704,56 @@
       },
       {
          "courseName":"PE 243/293 Weight Training",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 244/254 Indoor Rock Climbing",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 263 Flag Football",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 283/273 Physical Fitness",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 142, 242, 342, 442 Intercollegiate Basketball—Men",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 147, 247, 347, 447 Varsity Cheerleading— Women",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 152, 252, 352, 452 Intercollegiate Basketball—Women",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
       },
       {
          "courseName":"PE 153, 253, 353, 453 Intercollegiate Volleyball—Women",
+         "creditHours":"",
          "coursePrereq":"",
          "courseNote":"",
          "courseDescription":""
@@ -3803,6 +3830,7 @@
       },
       {
          "courseName":"PE 207–392 Coaching Classes",
+         "creditHours":"",
          "coursePrereq":"PE 191 (or BY 105 and sport management concentration), PE 196, and successful completion of or concurrent enrollment in PE 298/299.",
          "courseNote":"",
          "courseDescription":"These are theory and practice courses for coaching various sports. The student will learn skills, techniques, and coaching strategies involved in the sport."
