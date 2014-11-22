@@ -11,7 +11,35 @@
 |
 */
 
-$app['router']->get('/', function() use ($app)
+/*
+|--------------------------------------------------------------------------
+| Angular Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/', function()
 {
-   return View::make('hello');
+   return View::make('index'); // will return app/views/index.php
 });
+
+/*
+|  Not Best practice. add controller to catch these routes
+*/
+App::missing(function($exception)
+{
+   return View::make('index');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Api Routes
+|--------------------------------------------------------------------------
+*/
+Route::get ('login', 'PageController@login');
+
+Route::group(array('prefix' => 'api'), function() {
+   Route::resource('display', 'PageController@display');
+   Route::resource('testCourseSearch', 'PageController@testCourseNameSearch');
+   Route::resource('testInstructorSearch', 'PageController@testInstructorSearch');
+   Route::resource('testDescriptionSearch', 'PageController@testDescriptionSearch');
+   Route::resource('courseoutline', 'CourseOutlineController', array('only' => array('create', 'store', 'show')));
+}); 
