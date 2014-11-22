@@ -11,6 +11,7 @@ class User extends Ardent implements UserInterface, RemindableInterface {
     protected $fillable = array('first_name', 'last_name', 'email', 'password', 'office', 'office_hours', 'remember_token');
 
 	use UserTrait, RemindableTrait;
+   
 
 	/**
 	 * The database table used by the model.
@@ -18,7 +19,6 @@ class User extends Ardent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'users';
-
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *

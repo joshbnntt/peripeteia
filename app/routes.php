@@ -13,34 +13,33 @@
 
 /*
 |--------------------------------------------------------------------------
-| Page Routes
+| Angular Routes
 |--------------------------------------------------------------------------
 */
-Route::get ('/',     'PageController@index');
-Route::get ('login', 'PageController@login');
+Route::get('/', function()
+{
+   return View::make('index'); // will return app/views/index.php
+});
 
+/*
+|  Not Best practice. add controller to catch these routes
+*/
+App::missing(function($exception)
+{
+   return View::make('index');
+});
 
 /*
 |--------------------------------------------------------------------------
-| Course Outline Routes
+| Page Routes
 |--------------------------------------------------------------------------
 */
-Route::group(array('before' => 'auth'), function()
-{
-   Route::get ('courseoutline/create', array(
-         'uses' => 'CourseOutlineController@create'
-      )
-   );
-   Route::get ('courseoutline/show', array(
-         'uses' => 'CourseOutlineController@show'
-      )
-   );
-   Route::post('courseoutline/store', array(
-         'uses' => 'CourseOutlineController@store'
-      )
-   );
-});
+Route::get ('login', 'PageController@login');
 
+Route::group(array('prefix' => 'api'), function() {
+   Route::resource('display', 'PageController@display');
+   Route::resource('courseoutline', 'CourseOutlineController', array('only' => array('create', 'store', 'show')));
+});   
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +52,22 @@ Route::get ('logout', array(
       'uses' => 'AuthController@logout'
    )
 );
+
+/*
+|--------------------------------------------------------------------------
+| Miscellanious Routes
+|--------------------------------------------------------------------------
+|
+| Routes that will most likely get removed before merging with production
+|
+*/
+Route::get('/new', function()
+{
+   User::create([
+         'first_name' => 'Joshua',
+         'last_name' => 'Bennett',
+         'email'  => 'jdbnc93@aol.com',
+         'password' => Hash::make('1234')
+      ]);
+   return 'hi';
+});

@@ -6,13 +6,13 @@
       <fieldset>
          <legend>Login</legend>
          {{ Form::open(array('action' => 'AuthController@validate')) }}
-            @if($errors->first('username'))
-               {{ Form::label('username', 'Username', array('class' => 'error')) }}
-               {{ Form::text('username', null, array('placeholder' => 'E.G. joe123', 'class' => 'error')) }}
-               <small class="error">Invalid username</small>
+            @if($errors->first('email'))
+               {{ Form::label('email', 'Email', array('class' => 'error')) }}
+               {{ Form::email('Email', null, array('placeholder' => 'E.G. joe123', 'class' => 'error')) }}
+               <small class="error">Invalid email</small>
             @else
-               {{ Form::label('username', 'Username') }}
-               {{ Form::text('username', null, array('placeholder' => 'E.G. joe123')) }}
+               {{ Form::label('email', 'Email') }}
+               {{ Form::email('email', null, array('placeholder' => 'E.G. jdbnc93@aol.com')) }}
             @endif
 
             @if($errors->first('password'))
