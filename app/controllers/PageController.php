@@ -67,7 +67,7 @@ class PageController extends BaseController {
 		{
 			if(str_contains(strtolower($course->name), $search ))
 			{
-				$results[] = ['name' => $course->name];
+			$results[] = ['name' => $course->name];
 			}
 		}
 
