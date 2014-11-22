@@ -15,7 +15,7 @@ elixir(function(mix) {
     mix.sass("app.scss")
        .scripts([
             '../resources/assets/js/jquery/jquery.js',
-            '../resources/assets/js/foundation/foundation.min.js',
+            '../resources/assets/js/foundation/foundation.js',
             '../resources/assets/js/app/app.js'
          ])
        .styles(['css/app.css', 'css/icon-fonts/foundation-icons.css'])

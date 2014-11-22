@@ -12,7 +12,7 @@
 </style>
    </head>
 
-   <body ng-controller="HomeController">
+   <body>
    <div peri-topbar></div>
       <!-- Main page content -->
       <div id="main">
@@ -20,9 +20,12 @@
       </div>
 
       <?php echo HTML::script('js/jquery-1.11.1.min.js') ?>
+      <script src="<?php echo elixir("js/all.js") ?>"></script>
       <?php echo HTML::script('app/vendorItems/angular.min.js') ?>
       <?php echo HTML::script('app/vendorItems/angular-route.js') ?>
       <?php echo HTML::script('app/application.js') ?>
+      <?php echo HTML::script('app/components/login/LoginController.js') ?>
+      <?php echo HTML::script('app/shared/services/AuthService.js') ?>
       <?php echo HTML::script('app/components/home/HomeController.js') ?>
       <?php echo HTML::script('app/components/home/HomeService.js') ?>
       <?php echo HTML::script('app/components/courseOutlineForm/CourseOutlineController.js') ?>
