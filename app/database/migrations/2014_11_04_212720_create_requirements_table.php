@@ -15,7 +15,7 @@ class CreateRequirementsTable extends Migration {
 		Schema::create('requirements', function(Blueprint $table)
 		{
 			$table->increments('id');
-         $table->integer('outline_id')->unsigned()->indexed();
+			$table->integer('outline_id')->unsigned()->indexed();
          $table->foreign('outline_id')->references('id')->on('outlines');
          $table->string('title');
          $table->longText('description');

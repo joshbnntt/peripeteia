@@ -14,7 +14,6 @@ class OutlinesTableSeeder extends Seeder {
 			Outline::create([
             'instructor_id' => $faker->numberBetween(1, 10),
             'course_id'     => $faker->numberBetween(1, 10),
-            'credit_hours'  => $faker->numberBetween(1, 4),
             'description'   => $faker->paragraph()
 			]);
 		}

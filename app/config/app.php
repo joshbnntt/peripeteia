@@ -123,6 +123,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
       'Way\Generators\GeneratorsServiceProvider',
       'Barryvdh\DomPDF\ServiceProvider',
+      'Barryvdh\Cors\CorsServiceProvider',
+      'Dingo\Api\ApiServiceProvider',
 	),
 
 	/*
@@ -151,6 +153,7 @@ return array(
 
 	'aliases' => array(
 
+		'API'             => 'Dingo\Api\Facades\API',
 		'App'             => 'Illuminate\Support\Facades\App',
 		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
 		'Auth'            => 'Illuminate\Support\Facades\Auth',
@@ -158,7 +161,7 @@ return array(
 		'Cache'           => 'Illuminate\Support\Facades\Cache',
 		'ClassLoader'     => 'Illuminate\Support\ClassLoader',
 		'Config'          => 'Illuminate\Support\Facades\Config',
-		'Controller'      => 'Illuminate\Routing\Controller',
+		'Controller'      => 'Dingo\Api\Routing\Controller',
 		'Cookie'          => 'Illuminate\Support\Facades\Cookie',
 		'Crypt'           => 'Illuminate\Support\Facades\Crypt',
 		'DB'              => 'Illuminate\Support\Facades\DB',

@@ -2,7 +2,7 @@
 use LaravelBook\Ardent\Ardent;
 
 class Outline extends Ardent {
-    protected $fillable = array('instructor_id', 'course_id', 'credit_hours', 'description', 'course_requirements');
+    protected $fillable = array('instructor_id', 'course_id', 'description', 'course_requirements');
     
     /**
 	 * The database table used by the model.
@@ -16,8 +16,7 @@ class Outline extends Ardent {
     */
    public static $rules = array(
       'instructor_id' => 'required|numeric',
-      'course_id'     => 'required|numeric',
-      'credit_hours'  => 'required|numeric|between:1,5'
+      'course_id'     => 'required|numeric'
    );
 
     //Owns

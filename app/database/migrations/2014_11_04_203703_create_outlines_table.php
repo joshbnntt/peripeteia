@@ -19,7 +19,6 @@ class CreateOutlinesTable extends Migration {
          $table->foreign('course_id')->references('id')->on('courses');
          $table->integer('instructor_id')->unsigned()->indexed();
          $table->foreign('instructor_id')->references('id')->on('users');
-         $table->integer('credit_hours');
          $table->longText('description')->nullable();
          $table->longText('course_requirements')->nullable();
 			$table->timestamps();
