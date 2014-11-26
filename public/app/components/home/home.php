@@ -16,3 +16,8 @@
             </table>
       </div>
    </div>
+   <div class="row">
+  <div class="small-12 medium-7 columns">
+    <pre>{{ userInfo.user | json }}</pre>
+  </div>
+</div>

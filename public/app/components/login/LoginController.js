@@ -1,13 +1,16 @@
 var login = angular.module('LoginCtrl',[]);
  
-login.controller('LoginController',function($scope, Login){
+login.controller('LoginController',function($scope, $q, $window, $location, AuthenticationService){
    $scope.loginSubmit = function(){
-      var auth = Login.auth($scope.loginData);
-      auth.success(function(response){
-         console.log(response);
-      })
-      .error(function(response){
-         console.log(response);
-      });
+      AuthenticationService.login($scope.loginData)
+         .then(function(response){
+            $scope.userInfo = response;
+            $location.path("/home");
+            console.log(response);
+         },
+         function(error){
+            $scope.authError = error;
+            console.log(error);
+         });
    }
 });

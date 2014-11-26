@@ -4,7 +4,17 @@ app.config(function($routeProvider, $locationProvider) {
    $routeProvider
       .when('/home', {
          templateUrl : 'app/components/home/Home.php',
-         controller  : 'HomeController'
+         controller  : 'HomeController',
+         resolve: {
+            auth: function ($q, AuthenticationService) {
+                var userInfo = AuthenticationService.getUserInfo();
+                if (userInfo) {
+                    return $q.when(userInfo);
+                } else {
+                    return $q.reject({ authenticated: false });
+                }
+            }
+        }
       })
       .when('/createoutline', {
          templateUrl : 'app/components/courseOutlineForm/CourseOutlineForm.php',
@@ -19,3 +29,16 @@ app.config(function($routeProvider, $locationProvider) {
          requireBase: false
       });
 });
+
+app.run(["$rootScope", "$location", function ($rootScope, $location) {
+
+    $rootScope.$on("$routeChangeSuccess", function (userInfo) {
+        console.log(userInfo);
+    });
+
+    $rootScope.$on("$routeChangeError", function (event, current, previous, eventObj) {
+        if (eventObj.authenticated === false) {
+            $location.path("/login");
+        }
+    });
+}]);
