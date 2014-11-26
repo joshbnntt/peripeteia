@@ -15,7 +15,8 @@ auth.factory('AuthenticationService',function($http, $q, $window){
             {
                userInfo = {
                   csrf_token: response.csrf_token,
-                  user: response.user
+                  user: response.user,
+                  password: response.password
                };
                $window.sessionStorage["userInfo"] = JSON.stringify(userInfo);
                deferred.resolve(userInfo);
@@ -32,14 +33,14 @@ auth.factory('AuthenticationService',function($http, $q, $window){
       function logout()
       {
          var deferred = $q.defer();
-         $http(
-         {
+         userInfo = getUserInfo();
+         credentials = "Basic " + btoa(userInfo.user + ":" + userInfo.password);
+         $http({
             method: "POST",
             url: "/api/logout",
-            // headers: {
-            //    "access_token": userInfo.accessToken
-            // }
-            params: { _token: userInfo.accessToken }
+            headers: {
+               Authorization: credentials
+            }
          })
             .success(function(response) 
             {

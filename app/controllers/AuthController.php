@@ -65,7 +65,7 @@ class AuthController extends BaseController {
 		Auth::attempt($userdata);
 
 		if(Auth::check()) {
-			$return_array = ['auth_status' => Auth::check(), 'csrf_token' => csrf_token(), 'user' => $userdata['email']];
+			$return_array = ['auth_status' => Auth::check(), 'csrf_token' => csrf_token(), 'user' => $userdata['email'], 'password' => $userdata['password']];
 			return Response::json($return_array, 200);
 		} else {
 			$return_array = ['auth_status' => Auth::check(), 'error' => 'User could not be authenticated'];

@@ -1,16 +1,18 @@
 app.service('HomeService', [])
-   .factory('Display', function($http) {
+   .factory('Display', function($http, AuthenticationService) {
       return {
          // get all the comments
-         display : function(userInfo) {
+         display : function() {
+            userInfo = AuthenticationService.getUserInfo();
+            credentials = "Basic " + btoa(userInfo.user + ":" + userInfo.password);
+
             return $http(
                {
-                  method: "GET",
+                  method: "POST",
                   url: "/api/display",
                   headers: {
-                     HTTP_AUTHORIZATION: userInfo.csrf_token //"uWd1q7HK8YnQ0eJoi9XX2VG64j4uaUWOeQJ3Gf5R" 
+                     Authorization: credentials
                   }
-                  //params: { access_token: userInfo.csrf_token }
                })
          }         
       }

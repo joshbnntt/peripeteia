@@ -18,7 +18,17 @@ app.config(function($routeProvider, $locationProvider) {
       })
       .when('/createoutline', {
          templateUrl : 'app/components/courseOutlineForm/CourseOutlineForm.php',
-         controller  : 'CourseOutlineController'
+         controller  : 'CourseOutlineController',
+         resolve: {
+            auth: function ($q, AuthenticationService) {
+                var userInfo = AuthenticationService.getUserInfo();
+                if (userInfo) {
+                    return $q.when(userInfo);
+                } else {
+                    return $q.reject({ authenticated: false });
+                }
+            }
+        }
       })
       .when('/', {
          templateUrl : 'app/components/login/LoginForm.php',
@@ -38,7 +48,7 @@ app.run(["$rootScope", "$location", function ($rootScope, $location) {
 
     $rootScope.$on("$routeChangeError", function (event, current, previous, eventObj) {
         if (eventObj.authenticated === false) {
-            $location.path("/login");
+            $location.path("/");
         }
     });
 }]);
