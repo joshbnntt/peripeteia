@@ -1,6 +1,5 @@
 app.controller('HomeController', function($scope, $http, $window, $location, Display, AuthenticationService) {
    $scope.userInfo = angular.fromJson($window.sessionStorage["userInfo"]);
-   //$scope.userInfo = $window.sessionStorage["userInfo"];
 
    Display.display($scope.userInfo)
          .success(function(data) {

@@ -33,6 +33,10 @@ app.config(function($routeProvider, $locationProvider) {
       .when('/', {
          templateUrl : 'app/components/login/LoginForm.php',
          controller  : 'LoginController'
+      })
+      .otherwise('/', {
+         templateUrl : 'app/components/login/LoginForm.php',
+         controller  : 'LoginController'
       });
       $locationProvider.html5Mode({
          enabled: true,

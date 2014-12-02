@@ -17,7 +17,10 @@
             </ul>
         <!-- Right Nav Section -->
         <ul class="right">
-          <li class="active"><a href="#">Login</a></li>
+          <li ng-show="{{ userInfo }}"> <a>{{ userInfo.user }}</a></li>
+          <li class="divider"></li>
+          <li class="active" ng-show="{{ !userInfo }}"><a ng-href="/">Login</a></li>
+          <li class="active" ng-show="{{ userInfo }}"><a ng-href="/logout">Logout</a></li>
         </ul>
       </section>
    </nav>

@@ -1,4 +1,9 @@
 <div class="row" style="margin-top:50px;">
+  <div class="small-12 large-centered">
+    <h1>Availeable Course Outlines</h1>
+  </div>
+</div>
+<div class="row">
       <div class="small-12 large-centered columns">
             <table style="width: 100%; margin-top: 20px;">
                <thead>
@@ -16,8 +21,4 @@
             </table>
       </div>
    </div>
-   <div class="row">
-  <div class="small-12 medium-7 columns">
-    <pre>{{ userInfo.user | json }}</pre>
-  </div>
 </div>

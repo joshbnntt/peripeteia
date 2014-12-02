@@ -1,6 +1,10 @@
 var login = angular.module('LoginCtrl',[]);
  
 login.controller('LoginController',function($scope, $q, $window, $location, AuthenticationService){
+   if ($window.sessionStorage["userInfo"])
+   {
+      $location.path("/home")
+   }
    $scope.loginSubmit = function(){
       AuthenticationService.login($scope.loginData)
          .then(function(response){
