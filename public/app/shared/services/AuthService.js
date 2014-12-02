@@ -58,14 +58,14 @@ auth.factory('AuthenticationService',function($http, $q, $window){
 
       function getUserInfo()
       {
-         return userInfo;
+         return angular.fromJson(userInfo);
       }
 
       function init()
       {
          if($window.sessionStorage["userInfo"])
          {
-            userInfo = angular.toJson($window.sessionStorage["userInfo"]);
+            userInfo = $window.sessionStorage["userInfo"];
          }
       }
       init();

@@ -2,9 +2,9 @@ app.controller('CourseOutlineController', function($scope, $http, $window, $loca
   $scope.master = {};
   $scope.test = {};
   $scope.outline = { 
-                      course_name: "DataStructuresandAlgorithms",
+                      course_name: "DataStruc",
                       credit_hours: "2", 
-                      instructor_name: "DrHowell",
+                      instructor_name: "DrasdfHowell",
                       office_location: "AC345", 
                       office_hours: "TIII", 
                       email: "joshbnntt@peri.com", 
