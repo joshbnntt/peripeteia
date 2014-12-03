@@ -8,8 +8,7 @@
       <link rel="stylesheet" href="<?php echo elixir("css/all.css") ?>">
       <link rel="stylesheet" href="app/vendorItems/angucomplete-alt.css">
       <?php echo HTML::script('js/modernizr.js') ?>
-      <style type="text/css">
-</style>
+      <style type="text/css"></style>
    </head>
 
    <body>
@@ -31,6 +30,7 @@
       <?php echo HTML::script('app/components/courseOutlineForm/CourseOutlineController.js') ?>
       <?php echo HTML::script('app/components/courseOutlineForm/CourseOutlineService.js') ?>
       <?php echo HTML::script('app/shared/directives/periTopbar.js') ?>
+      <?php echo HTML::script('app/shared/directives/periLogout.js') ?>
       <?php echo HTML::script('app/vendorItems/angucomplete-alt.min.js') ?>
       <?php echo HTML::script('app/vendorItems/spin.js') ?>
       <?php echo HTML::script('app/vendorItems/angular-spinner.min.js') ?>

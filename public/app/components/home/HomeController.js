@@ -9,17 +9,4 @@ app.controller('HomeController', function($scope, $http, $window, $location, Dis
             console.log(error);
             $location.path("/");
          });
-
-   $scope.logout = function () {
-     AuthenticationService.logout()
-         .success(function (responce) 
-         {
-             $scope.userInfo = null;
-             $location.path("/");
-         })
-         .error(function (responce) 
-         {
-             console.log(response);
-         });
-   };
 });

@@ -36,7 +36,7 @@ auth.factory('AuthenticationService',function($http, $q, $window){
          userInfo = getUserInfo();
          credentials = "Basic " + btoa(userInfo.user + ":" + userInfo.password);
          $http({
-            method: "POST",
+            method: "GET",
             url: "/api/logout",
             headers: {
                Authorization: credentials
@@ -46,7 +46,7 @@ auth.factory('AuthenticationService',function($http, $q, $window){
             {
                userInfo = null;
                $window.sessionStorage["userInfo"] = null;
-               deferred.resolve(result);
+               deferred.resolve(response);
             })
             .error(function (response) 
             {

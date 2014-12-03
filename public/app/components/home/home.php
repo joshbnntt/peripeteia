@@ -1,6 +1,6 @@
 <div class="row" style="margin-top:50px;">
   <div class="small-12 large-centered">
-    <h1>Availeable Course Outlines</h1>
+    <h1>Available Course Outlines</h1>
   </div>
 </div>
 <div class="row">
