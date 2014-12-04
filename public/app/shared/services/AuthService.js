@@ -1,6 +1,6 @@
 var auth = angular.module('AuthSrvc',[]);
  
-auth.factory('AuthenticationService',function($http, $q, $window){
+auth.factory('AuthenticationService',function($http, $q, $window, $location, $rootScope){
    var userInfo;
    function login(credentials)
    {
@@ -21,6 +21,7 @@ auth.factory('AuthenticationService',function($http, $q, $window){
                $window.sessionStorage["userInfo"] = JSON.stringify(userInfo);
                deferred.resolve(userInfo);
                console.log(response);
+               $rootScope.$broadcast('userLoggedIn', userInfo);
             })
             .error(function(response)
             {
@@ -47,10 +48,12 @@ auth.factory('AuthenticationService',function($http, $q, $window){
                userInfo = null;
                $window.sessionStorage["userInfo"] = null;
                deferred.resolve(response);
+               $rootScope.$broadcast('userLoggedOut');
+               $location.path("/");
             })
             .error(function (response) 
             {
-             deferred.reject(response);
+               deferred.reject(response);
             });
 
          return deferred.promise;

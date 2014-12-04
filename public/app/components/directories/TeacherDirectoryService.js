@@ -1,14 +1,14 @@
-app.service('CourseOutlineService', [])
-   .factory('CourseOutline', function($http, AuthenticationService) {
+app.service('TeacherDirectoryService', [])
+   .factory('TeacherDirectory', function($http, AuthenticationService) {
       return {
          // get all the comments
-         save : function(outline) {
+         search : function(filter_text) {
             userInfo = AuthenticationService.getUserInfo();
             credentials = "Basic " + btoa(userInfo.user + ":" + userInfo.password);
             return $http({
                method: 'POST',
-               url: '/api/courseoutline/store',
-               params: outline,
+               url: '/api/directory/search',
+               params: filter_text,
                headers: {
                      Authorization: credentials
                   }

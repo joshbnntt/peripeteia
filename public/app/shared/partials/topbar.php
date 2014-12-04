@@ -10,17 +10,19 @@
 
      <section class="top-bar-section">
         <!-- Left Nav Section -->
-            <ul class="left" ng-show="{{ userInfo }}">
+            <ul class="left" ng-show=" userInfo ">
                <li class="divider"></li>
                <li><a ng-href="createoutline">Create an Outline</a></li>
+               <li class="divider"></li>
+               <li><a ng-href="teacherdirectorysearch">Search for a Teacher</a></li>
                <li class="divider"></li>
             </ul>
         <!-- Right Nav Section -->
         <ul class="right">
-          <li ng-show="{{ userInfo }}"> <a>{{ userInfo.user }}</a></li>
+          <li ng-show=" userInfo "> <a>{{ userInfo.user }}</a></li>
           <li class="divider"></li>
-          <li class="active" ng-show="{{ !userInfo }}"><a ng-href="/">Login</a></li>
-          <li class="active" ng-show="{{ userInfo }}" peri-logout></li>
+          <li class="active" ng-show=" !userInfo.user "><a ng-href="/">Login</a></li>
+          <li class="active" ng-show=" userInfo.user " peri-logout></li>
         </ul>
       </section>
    </nav>

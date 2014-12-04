@@ -29,6 +29,8 @@
       <?php echo HTML::script('app/components/home/HomeService.js') ?>
       <?php echo HTML::script('app/components/courseOutlineForm/CourseOutlineController.js') ?>
       <?php echo HTML::script('app/components/courseOutlineForm/CourseOutlineService.js') ?>
+      <?php echo HTML::script('app/components/directories/TeacherDirectoryController.js') ?>
+      <?php echo HTML::script('app/components/directories/TeacherDirectoryService.js') ?>
       <?php echo HTML::script('app/shared/directives/periTopbar.js') ?>
       <?php echo HTML::script('app/shared/directives/periLogout.js') ?>
       <?php echo HTML::script('app/vendorItems/angucomplete-alt.min.js') ?>

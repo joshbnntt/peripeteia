@@ -22,14 +22,14 @@ app.controller('CourseOutlineController', function($scope, $http, $window, $loca
   $scope.create = function()
   {
       $scope.startSpin(); 
-      if($scope.outline.course_name['title'])
-      {
-        $scope.outline.course_name = $scope.outline.course_name['title'];
-      }
-      if($scope.outline.instructor_name['title'])
-      {
-        $scope.outline.instructor_name = $scope.outline.instructor_name['title'];
-      }
+      // if($scope.outline.course_name['title'])
+      // {
+      //   $scope.outline.course_name = $scope.outline.course_name['title'];
+      // }
+      // if($scope.outline.instructor_name['title'])
+      // {
+      //   $scope.outline.instructor_name = $scope.outline.instructor_name['title'];
+      // }
       CourseOutline.save($scope.outline)
          .success(function(data)
          {
@@ -39,6 +39,10 @@ app.controller('CourseOutlineController', function($scope, $http, $window, $loca
               $scope.errors = data.errors;
               $scope.answer = data;
               $scope.stopSpin();
+            }
+            else if(data < 50)
+            {
+              $scope.errors = "There was a problem generating the outline.";
             }
             else
             {

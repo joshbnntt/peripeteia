@@ -7,14 +7,14 @@ app.directive('periLogout', function() {
 }).controller('PeriLogoutController', function($scope, $window, $location, AuthenticationService){
    $scope.logout = function () {
      AuthenticationService.logout()
-         .success(function (responce) 
-         {
-             $scope.userInfo = null;
-             $location.path("/");
-         })
-         .error(function (responce) 
-         {
-             console.log(response);
-         });
+         // .success(function (response) 
+         // {
+         //     $scope.userInfo = null;
+         //     $location.path("/");
+         // })
+         // .error(function (response) 
+         // {
+         //     console.log(response);
+         // });
    };
 });

@@ -30,6 +30,20 @@ app.config(function($routeProvider, $locationProvider) {
             }
         }
       })
+      .when('/teacherdirectorysearch', {
+         templateUrl : 'app/components/directories/teacherdirectory.php',
+         controller  : 'TeacherDirectoryController',
+         resolve: {
+            auth: function ($q, AuthenticationService) {
+                var userInfo = AuthenticationService.getUserInfo();
+                if (userInfo) {
+                    return $q.when(userInfo);
+                } else {
+                    return $q.reject({ authenticated: false });
+                }
+            }
+        }
+      })
       .when('/', {
          templateUrl : 'app/components/login/LoginForm.php',
          controller  : 'LoginController'

@@ -2,10 +2,11 @@ var login = angular.module('LoginCtrl',[]);
  
 login.controller('LoginController',function($scope, $q, $window, $location, AuthenticationService){
    $scope.$on('$viewContentLoaded', function() {
-      if ($window.sessionStorage["userInfo"])
+      if ($window.sessionStorage["userInfo"] === null)
       {
          $location.path("/home")
       }
+      return;
    });
    
    $scope.loginSubmit = function(){
