@@ -44,5 +44,7 @@ Route::api(['version' => 'v1', 'prefix' => 'api', 'protected' => true], function
    Route::get('testCourseSearch', ['uses' => 'PageController@testCourseNameSearch']);
    Route::get('testInstructorSearch', ['uses' => 'PageController@testInstructorSearch']);
    Route::get('testDescriptionSearch', ['uses' => 'PageController@testDescriptionSearch']);
-   Route::resource('courseoutline', ['uses' => 'CourseOutlineController', ['only' => ['create', 'store', 'show']]);
+   Route::resource('courseoutline', ['uses' => 'CourseOutlineController@create']);
+   Route::resource('courseoutline', ['uses' => 'CourseOutlineController@store']);
+   Route::resource('courseoutline', ['uses' => 'CourseOutlineController@show']);
 });
