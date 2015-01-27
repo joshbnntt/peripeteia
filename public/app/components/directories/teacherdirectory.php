@@ -1,12 +1,12 @@
    <div class="row" style="margin-top:50px;" >
    <form novalidate >
-   <div class="small-12 large-6 columns">
+   <div class="small-12 large-12 columns">
       <fieldset>
          <legend>Search</legend>
-            <input type="text" ng-model="filter_text" name="filter_text" id="filter_text" placeholder="search here"  title="Search by teacher first name, last name, or a combination of both. You can use partial names. (ie. John Smith, John, Smith, or J Smith)" autofocus required >
+            <input type="text" ng-model="filterText" name="filterText" id="filterText" placeholder="search here"  title="Search by teacher first name, last name, or a combination of both. You can use partial names. (ie. John Smith, John, Smith, or J Smith)" autofocus required >
             <button type="submit" id="submit" ng-click="search()" class="button right">Search</button>
-            <span class="error" ng-show="errors" ng-repeat='error in errors'>
-              <span>{{ error }}</span>
+            <span class="error" ng-show="errors" >
+              <span>{{ errors }}</span>
             </span>            
       </fieldset>
    </div>
@@ -26,6 +26,7 @@
              
        </tbody>
       </table>
+    </div>
     </div>
     <div class="row">
     <div class="small-12 large-centered columns" ng-show="!users">

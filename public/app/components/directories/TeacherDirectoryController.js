@@ -9,25 +9,25 @@ app.controller('TeacherDirectoryController', function($scope, $http, $window, $l
   $scope.search = function()
   {
       $scope.startSpin();
-      TeacherDirectory.search($scope.filter_text)
+      TeacherDirectory.search($scope.filterText)
          .success(function(data)
          {
+            $scope.stopSpin();
             //if returns with validation errors
             if(data.errors)
             {
               $scope.errors = data.errors;
-              $scope.stopSpin();
             }
             else
             {
-              $scope.stopSpin();
-              $window.location.href = data;
+              $scope.users = data;              
             }
          })
          .error(function(data)
          {
             $scope.stopSpin();
-            $scope.answer = data;
+            console.log(data);
+            //$scope.errors = data;
          });
   };
 });

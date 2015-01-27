@@ -34,8 +34,9 @@ class UserController extends BaseController
         if($validator->fails()) {
             return Response::json(['errors' => $validator->errors()]);
         } else {
-            $searchFilter = Input::all();
-            $preFilterText = trim($searchFilter['filter_text']);
+            $filterText = Input::all();
+            //$searchFilter = Input::all();
+            //$preFilterText = trim($searchFilter['filter_text']);
             $filterText = explode( " ", $preFilterText);
 
             if(sizeof($filterText) == 1) {
@@ -50,7 +51,7 @@ class UserController extends BaseController
                     ->get();
             }
 
-            return Response::json($users, 200);
+            return Response::json($users);
 
         }
 

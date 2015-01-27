@@ -47,7 +47,8 @@ app.controller('CourseOutlineController', function($scope, $http, $window, $loca
             else
             {
               $scope.stopSpin();
-              $window.location.href = data;
+              //$window.location.href = data;
+              $window.open(data, '_blank');
             }
             
             

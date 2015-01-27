@@ -18,7 +18,8 @@
 */
 App::missing(function($exception)
 {
-   return Redirect::to('/');//Response::make('Page not found', 404);
+   return View::make('index');
+   //return Redirect::to('/');//Response::make('Page not found', 404);
 });
 
 /*
