@@ -14,5 +14,5 @@ app.service('TeacherDirectoryService', [])
                   }
             });
          }        
-      }
+      };
    });

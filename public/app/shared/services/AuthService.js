@@ -2,6 +2,13 @@ var auth = angular.module('AuthSrvc',[]);
  
 auth.factory('AuthenticationService',function($http, $q, $window, $location, $rootScope){
    var userInfo;
+
+   /**
+   * Logs user in.
+   *
+   * @param credentials
+   * @returns deferred.promise
+   */
    function login(credentials)
    {
          var deferred = $q.defer();
@@ -30,7 +37,11 @@ auth.factory('AuthenticationService',function($http, $q, $window, $location, $ro
             });
            return deferred.promise;
       }
-
+      /**
+      * Logs user out.
+      *
+      * @returns deferred.promise
+      */
       function logout()
       {
          var deferred = $q.defer();
@@ -58,12 +69,20 @@ auth.factory('AuthenticationService',function($http, $q, $window, $location, $ro
 
          return deferred.promise;
       }
-
+      /**
+      * Gets the users Information.
+      *
+      * @returns Json Array
+      */
       function getUserInfo()
       {
          return angular.fromJson(userInfo);
       }
 
+      /**
+      * Retrieves and sets userInfo to the user information from session variable if there.
+      *
+      */
       function init()
       {
          if($window.sessionStorage["userInfo"])

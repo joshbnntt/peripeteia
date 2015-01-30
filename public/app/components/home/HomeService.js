@@ -1,5 +1,5 @@
 app.service('HomeService', [])
-   .factory('Display', function($http, AuthenticationService) {
+   .factory('Home', function($http, AuthenticationService) {
       return {
          // get all the comments
          display : function() {

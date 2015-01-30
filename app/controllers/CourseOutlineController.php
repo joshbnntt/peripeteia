@@ -49,20 +49,22 @@ class CourseOutlineController extends BaseController {
 		$outline->course->accrediting_information = 'Intro to Programming';
 		$outline->instructor = 1;
 		$outline->credit_hours = 3;*/
-
+		Validator::extend('alpha_space', function($attr, $value) {
+    		return preg_match('/^([a-zA-Z0-9\x20])+$/', $value);
+		});
 		$submitted_info = Input::all();
 		$rules = [
-			'course_outcomes'      => 'required|alpha_num|max:500',
-			'course_name'          => 'required|alpha_num',
+			'course_outcomes'      => 'required|alpha_space|max:500',
+			'course_name'          => 'required|alpha_space',
 			'credit_hours'         => 'required|numeric',
-			'instructor_name'      => 'required|alpha_num',
-			'office_location'      => 'required|alpha_num',
-			'office_hours'         => 'required|alpha_num',
+			'instructor_name'      => 'required|alpha_space',
+			'office_location'      => 'required|alpha_space',
+			'office_hours'         => 'required|alpha_space',
 			'email'                => 'required|email',
-			'course_description'   => 'required|alpha_num',
-			'course_prerequisites' => 'required|alpha_num',
-			'course_texts'         => 'required|alpha_num',
-			'course_outcomes'      => 'required|alpha_num'
+			'course_description'   => 'required|alpha_space',
+			'course_prerequisites' => 'required|alpha_space',
+			'course_texts'         => 'required|alpha_space',
+			'course_outcomes'      => 'required|alpha_space'
 		];
 		$validator = Validator::make($submitted_info, $rules);
 

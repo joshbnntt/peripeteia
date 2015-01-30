@@ -2,16 +2,16 @@ app.controller('CourseOutlineController', function($scope, $http, $window, $loca
   $scope.master = {};
   $scope.test = {};
   $scope.outline = { 
-                      course_name: "DataStruc",
-                      credit_hours: "2", 
-                      instructor_name: "DrasdfHowell",
-                      office_location: "AC345", 
-                      office_hours: "TIII", 
-                      email: "joshbnntt@peri.com", 
-                      course_description: "safd", 
-                      course_prerequisites: "asdg", 
-                      course_texts: "asfg", 
-                      course_outcomes: "asgwerdsasdgfewasd" 
+                      course_name: "Data Structures and Algorithms",
+                      credit_hours: "3",
+                      instructor_name: "Robert Howell",
+                      office_location: "AC 214",
+                      office_hours: "T IV",
+                      email: "rhowell@faculty.pcci.edu",
+                      course_description: "A Hard class with a Hard teacher",
+                      course_prerequisites: "Better be good at what you do",
+                      course_texts: "THE SUPPLEMENT",
+                      course_outcomes: "Know Pointer Arithmetic" 
                     };
   $scope.startSpin = function(){
       usSpinnerService.spin('spinner-1');
@@ -47,6 +47,7 @@ app.controller('CourseOutlineController', function($scope, $http, $window, $loca
             else
             {
               $scope.stopSpin();
+              $scope.outline = angular.copy();
               //$window.location.href = data;
               $window.open(data, '_blank');
             }
