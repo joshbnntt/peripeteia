@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder {
             'first_name' => $faker->firstName,
             'last_name'  => $faker->lastName,
             'email'      => $faker->email,
-            'password'   => Hash::make($faker->word),
+            'password'   => Hash::make('password'),
             'office'     => $faker->bothify('??###'),
             'office_hours' => $faker->numerify('#, #')
 			]);

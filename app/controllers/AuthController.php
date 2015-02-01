@@ -47,11 +47,7 @@ class AuthController extends BaseController {
 		$return_array;
 
 		$rules = [
-<<<<<<< HEAD
 			'email' => 'required|email',
-=======
-			'email' => 'required',
->>>>>>> 5867cb01d2db15ac460226b8506b6711db8e1057
 			'password' => 'required|alphaNum|min:3'
 		];
 
@@ -68,9 +64,14 @@ class AuthController extends BaseController {
 
 		Auth::attempt($userdata);
 
-		$return_array = ['csrf_token' => csrf_token(), 'user' => $userdata['email']];
-
-		return $this->auth->user();
+		if(Auth::check()) {
+			$return_array = ['auth_status' => Auth::check(), 'csrf_token' => csrf_token(), 'user' => $userdata['email'], 'password' => $userdata['password']];
+			return Response::json($return_array, 200);
+		} else {
+			$return_array = ['auth_status' => Auth::check(), 'error' => 'User could not be authenticated'];
+			return Response::json($return_array, 401);
+		}
+		
 	}
 
 	/**
