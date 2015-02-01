@@ -4,7 +4,8 @@
       <fieldset>
          <legend>General Information</legend>
             <label for="course_name">Course Name</label>
-            <div angucomplete-alt 
+            <input type="text" ng-model="outline.course_name" name="course_name" id="course_name" placeholder="E.G. Life in Christ"  required >
+            <!-- <div angucomplete-alt 
                id="course_name" 
                placeholder="E.G. Life in Christ" 
                pause="100" 
@@ -16,7 +17,7 @@
                input-class="form-control form-control-small"
                match-class="highlight"
                field-required="true"
-               auto-match="true"></div>
+               auto-match="true"></div> -->
             <span class="error" ng-show="errors.course_name">
               <span>{{ errors.course_name }}</span>
             </span>
@@ -29,7 +30,8 @@
             
 
             <label for="instructor_name">Instructor Name</label>
-            <div angucomplete-alt 
+            <input type="text" ng-model="outline.instructor_name" name="instructor_name" id="instructor_name" placeholder="E.G. Mr. Stew Foster" required >            
+            <!-- <div angucomplete-alt 
                id="instructor_name" 
                placeholder="E.G. Mr. Stew Foster" 
                pause="100" 
@@ -41,7 +43,7 @@
                input-class="form-control form-control-small"
                match-class="highlight"
                field-required="true"
-               auto-match="true"></div>
+               auto-match="true"></div> -->
             <span class="error" ng-show="errors.instructor_name">
               <span>{{ errors.instructor_name }}</span>
             </span>

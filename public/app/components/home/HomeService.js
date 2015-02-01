@@ -1,9 +1,19 @@
 app.service('HomeService', [])
-   .factory('Display', function($http) {
+   .factory('Home', function($http, AuthenticationService) {
       return {
          // get all the comments
          display : function() {
-            return $http.get('/api/display');
+            userInfo = AuthenticationService.getUserInfo();
+            credentials = "Basic " + btoa(userInfo.user + ":" + userInfo.password);
+
+            return $http(
+               {
+                  method: "POST",
+                  url: "/api/display",
+                  headers: {
+                     Authorization: credentials
+                  }
+               })
          }         
       }
    });

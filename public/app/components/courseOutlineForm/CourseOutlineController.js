@@ -2,16 +2,16 @@ app.controller('CourseOutlineController', function($scope, $http, $window, $loca
   $scope.master = {};
   $scope.test = {};
   $scope.outline = { 
-                      course_name: "DataStructuresandAlgorithms",
-                      credit_hours: "2", 
-                      instructor_name: "DrHowell",
-                      office_location: "AC345", 
-                      office_hours: "TIII", 
-                      email: "joshbnntt@peri.com", 
-                      course_description: "safd", 
-                      course_prerequisites: "asdg", 
-                      course_texts: "asfg", 
-                      course_outcomes: "asgwerdsasdgfewasd" 
+                      course_name: "Data Structures and Algorithms",
+                      credit_hours: "3",
+                      instructor_name: "Robert Howell",
+                      office_location: "AC 214",
+                      office_hours: "T IV",
+                      email: "rhowell@faculty.pcci.edu",
+                      course_description: "A Hard class with a Hard teacher",
+                      course_prerequisites: "Better be good at what you do",
+                      course_texts: "THE SUPPLEMENT",
+                      course_outcomes: "Know Pointer Arithmetic" 
                     };
   $scope.startSpin = function(){
       usSpinnerService.spin('spinner-1');
@@ -22,14 +22,14 @@ app.controller('CourseOutlineController', function($scope, $http, $window, $loca
   $scope.create = function()
   {
       $scope.startSpin(); 
-      if($scope.outline.course_name['title'])
-      {
-        $scope.outline.course_name = $scope.outline.course_name['title'];
-      }
-      if($scope.outline.instructor_name['title'])
-      {
-        $scope.outline.instructor_name = $scope.outline.instructor_name['title'];
-      }
+      // if($scope.outline.course_name['title'])
+      // {
+      //   $scope.outline.course_name = $scope.outline.course_name['title'];
+      // }
+      // if($scope.outline.instructor_name['title'])
+      // {
+      //   $scope.outline.instructor_name = $scope.outline.instructor_name['title'];
+      // }
       CourseOutline.save($scope.outline)
          .success(function(data)
          {
@@ -40,10 +40,16 @@ app.controller('CourseOutlineController', function($scope, $http, $window, $loca
               $scope.answer = data;
               $scope.stopSpin();
             }
+            else if(data < 50)
+            {
+              $scope.errors = "There was a problem generating the outline.";
+            }
             else
             {
               $scope.stopSpin();
-              $window.location.href = data;
+              $scope.outline = angular.copy();
+              //$window.location.href = data;
+              $window.open(data, '_blank');
             }
             
             
