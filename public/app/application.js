@@ -8,7 +8,7 @@ app.config(function($routeProvider, $locationProvider) {
          resolve: {
             auth: function ($q, AuthenticationService) {
                 var userInfo = AuthenticationService.getUserInfo();
-                if (userInfo) {
+                if (userInfo.csrf_token) {
                     return $q.when(userInfo);
                 } else {
                     return $q.reject({ authenticated: false });
@@ -22,7 +22,7 @@ app.config(function($routeProvider, $locationProvider) {
          resolve: {
             auth: function ($q, AuthenticationService) {
                 var userInfo = AuthenticationService.getUserInfo();
-                if (userInfo) {
+                if (userInfo.csrf_token) {
                     return $q.when(userInfo);
                 } else {
                     return $q.reject({ authenticated: false });
@@ -36,7 +36,7 @@ app.config(function($routeProvider, $locationProvider) {
          resolve: {
             auth: function ($q, AuthenticationService) {
                 var userInfo = AuthenticationService.getUserInfo();
-                if (userInfo) {
+                if (userInfo.csrf_token) {
                     return $q.when(userInfo);
                 } else {
                     return $q.reject({ authenticated: false });
