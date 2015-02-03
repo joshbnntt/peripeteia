@@ -9,7 +9,8 @@ app.controller('TeacherDirectoryController', function($scope, $http, $window, $l
   $scope.search = function()
   {
       $scope.startSpin();
-      TeacherDirectory.search($scope.filterText)
+      var s = { 's' : $scope.filterText};
+      TeacherDirectory.searchTeacher(s)
          .success(function(data)
          {
             $scope.stopSpin();

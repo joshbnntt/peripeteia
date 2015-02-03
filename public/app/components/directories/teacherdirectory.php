@@ -23,13 +23,16 @@
           </tr>
        </thead>
        <tbody>
-             
+             <tr ng-repeat="user in users">
+               <th>{{ user.first_name }}</th>
+               <th>{{ user.last_name }}</th>
+             </tr>
        </tbody>
       </table>
     </div>
     </div>
     <div class="row">
-    <div class="small-12 large-centered columns" ng-show="!users">
+    <div class="small-12 large-centered columns" ng-show="!users[0].first_name">
       <div data-alert="" class="alert-box warning round">
         No results match your search.
         <a href="#" class="close">×</a>

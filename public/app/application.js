@@ -1,4 +1,4 @@
-var app = angular.module('peri', ['ngRoute', 'LoginCtrl', 'AuthSrvc', 'angucomplete-alt', 'angularSpinner']);
+var app = angular.module('peri', ['ngRoute', 'LoginCtrl', 'AuthSrvc', 'angucomplete-alt', 'angularSpinner', 'ApiService']);
 
 app.config(function($routeProvider, $locationProvider) {
    $routeProvider

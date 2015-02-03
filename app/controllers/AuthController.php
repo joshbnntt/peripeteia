@@ -10,7 +10,7 @@ class AuthController extends BaseController {
 	 */
 	public function create()
 	{
-		//
+        return View::make('pages.login');
 	}
 
 	/**
@@ -62,15 +62,20 @@ class AuthController extends BaseController {
 			];
 		}
 
-		Auth::attempt($userdata);
+//		Auth::attempt($userdata);
 
-		if(Auth::check()) {
-			$return_array = ['auth_status' => Auth::check(), 'csrf_token' => csrf_token(), 'user' => $userdata['email'], 'password' => $userdata['password']];
-			return Response::json($return_array, 200);
-		} else {
-			$return_array = ['auth_status' => Auth::check(), 'error' => 'User could not be authenticated'];
-			return Response::json($return_array, 401);
-		}
+//		if(Auth::check()) {
+//			$return_array = ['auth_status' => Auth::check(), 'csrf_token' => csrf_token(), 'user' => $userdata['email'], 'password' => $userdata['password']];
+//			return Response::json($return_array, 200);
+//		} else {
+//			$return_array = ['auth_status' => Auth::check(), 'error' => 'User could not be authenticated'];
+//			return Response::json($return_array, 401);
+//		}
+        if(Auth::attempt($userdata))
+        {
+//            Flash::message('Welcome Back!');
+            return Redirect::intended('/');
+        }
 		
 	}
 

@@ -3,8 +3,9 @@
 @section('content')
    <div class="row">
       <div class="small-12 large-centered columns">
-         @if(Auth::check())
+        @if(Auth::check())
             <table style="width: 100%; margin-top: 20px;">
+                <caption class="title">Available Outlines</caption>
                <thead>
                   <tr>
                      <th style="width: 70%">Course Name</th>
@@ -21,7 +22,7 @@
                   @endfor
                </tbody>
             </table>
-         @endif
+        @endif
       </div>
    </div>
 @stop
