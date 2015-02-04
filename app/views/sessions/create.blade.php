@@ -6,6 +6,7 @@
     @if (Session::has('login_errors'))
       <span class="error">Username or password incorrect.</span>
     @endif
+    </div>
 </div>    
 <div class="row">    
    {{Form::open(['route' => 'session.store']) }}

@@ -44,8 +44,6 @@ class AuthController extends BaseController {
 	 */
 	public function validate()
 	{
-		$return_array;
-
 		$rules = [
 			'email' => 'required|email',
 			'password' => 'required|alphaNum|min:3'
@@ -62,15 +60,6 @@ class AuthController extends BaseController {
 			];
 		}
 
-//		Auth::attempt($userdata);
-
-//		if(Auth::check()) {
-//			$return_array = ['auth_status' => Auth::check(), 'csrf_token' => csrf_token(), 'user' => $userdata['email'], 'password' => $userdata['password']];
-//			return Response::json($return_array, 200);
-//		} else {
-//			$return_array = ['auth_status' => Auth::check(), 'error' => 'User could not be authenticated'];
-//			return Response::json($return_array, 401);
-//		}
         if(Auth::attempt($userdata))
         {
 //            Flash::message('Welcome Back!');
@@ -88,7 +77,7 @@ class AuthController extends BaseController {
 	public function logout()
 	{
 		Auth::logout();
-		return 'Succesfully logged out';
+		return Redirect::to('login');
 	}
 
 }

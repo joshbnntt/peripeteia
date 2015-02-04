@@ -1,6 +1,24 @@
 @extends('layout.main')
 
 @section('content')
+@if(Session::has('newOutline'))
+    <script type="text/javascript">
+         var outline = window.open( {{$newOutline->path}}, '_blank');
+         outline.focus;
+       </script>
+@endif
+
+@if (Session::has('errors'))
+  <span class="error">
+    Errors:
+    <ul>
+    @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+    @endforeach
+    <li></li>
+    </ul>
+  </span>
+@endif
 {{ Form::open(array('action' => 'CourseOutlineController@store')) }}
    <div class="row">
       <div class="small-12 large-6 columns">

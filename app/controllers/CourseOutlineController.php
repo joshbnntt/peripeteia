@@ -31,27 +31,11 @@ class CourseOutlineController extends BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{ 
-		/*$outline = Outline::firstOrCreate([
-			'instructor_id' => '3',
-			'course_id'     => '9',
-			'credit_hours'  => '4'
-		]);
-		$outline
-		return $outline;
-
-		$submitted_info = Input::all();
-
-		$outline->course->name = 'Intro to Programming';
-		$outline->course->number = 'CS 202';
-		$outline->course->general_information = 'Intro to Programming';
-		$outline->course->specific_information = 'Intro to Programming';
-		$outline->course->accrediting_information = 'Intro to Programming';
-		$outline->instructor = 1;
-		$outline->credit_hours = 3;*/
+	{
 		Validator::extend('alpha_space', function($attr, $value) {
     		return preg_match('/^([a-zA-Z0-9\x20])+$/', $value);
 		});
+        $new_outline = [];
 		$submitted_info = Input::all();
 		$rules = [
 			'course_outcomes'      => 'required|alpha_space|max:500',
@@ -69,12 +53,18 @@ class CourseOutlineController extends BaseController {
 		$validator = Validator::make($submitted_info, $rules);
 
 		if($validator->fails()) {
-			return Response::json(['errors' => $validator->errors()]);
+//			return Response::json(['errors' => $validator->errors()]);
+            return Redirect::to('courseoutline/create')->withErrors($validator)->withInput($submitted_info);
 		}
 		$submitted_info['course_outcomes'] = explode("\n", $submitted_info['course_outcomes']);
 		PDF::loadView('pdfs.test',
 	      array('submitted_info' => $submitted_info))->save(public_path().'/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
-		return Response::json('/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
+        $new_outline = [
+            'path' => '/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf'
+        ];
+//		return Response::json('/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
+//      return Redirect::to('/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
+        return Redirect::to('courseoutline/create')->withNewOutline($new_outline);
 	}
 
 	/**

@@ -10,7 +10,7 @@ class SessionsController extends BaseController{
    {
       $this->user = $user;
    }
-/**
+   /**
    * Validate the entered use credentials
    * POST /login
    *
@@ -41,22 +41,28 @@ class SessionsController extends BaseController{
      }
      return;
   }
-   /* Pulls up the login page and starts a session to hold their data */
+   /**
+    * Pulls up the login page and starts a session to hold their data
+    */
    public function create()
    {
       return View::make('sessions.create');
    }
 
-   /* Logs out the user and redirects back to the login page */
+   /**
+    * Logs out the user and redirects back to the login page
+    */
    public function delete()
    {
       Auth::logout();
       return Redirect::to('login');
    }
    
-   /* Authenticates user login data. 
-      If passes redirects to where they attempted to login. 
-      If fails warns the user.*/
+   /**
+    * Authenticates user login data.
+    * If passes redirects to where they attempted to login.
+    * If fails warns the user.
+    */
    public function store()
    {
       if(Auth::attempt(Input::only('email', 'password')))

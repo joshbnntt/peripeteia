@@ -73,6 +73,7 @@ Route::post('login', [
     'uses' => 'AuthController@validate'
 ]);
 Route::get ('logout', array(
+        'as' => 'logout_path',
         'before' => 'auth',
         'uses' => 'AuthController@logout'
     )
