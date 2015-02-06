@@ -30,13 +30,27 @@
    {{Form::close()}}
 
 @if(!empty($allusers))
-
-  @foreach ($allusers as $value)
-  {{$value->first_name}}
-  {{$value->last_name}}
-  {{$value->office}}
-  {{$value->email}}
-  @endforeach
+    <table style="width: 100%; margin-top: 20px;">
+        <caption class="title">Results</caption>
+       <thead>
+          <tr>
+             <th style="width: 25%">First Name</th>
+             <th style="width: 25%">Last Name</th>
+             <th style="width: 10%">Office</th>
+             <th style="width: 40%">Email</th>
+          </tr>
+       </thead>
+       <tbody>
+          @foreach ($allusers as $value)
+             <tr>
+                <td>{{$value->first_name}}</td>
+                <td>{{$value->last_name}}</td>
+                <td>{{$value->office}}</td>
+                <td>{{$value->email}}</td>
+             </tr>
+          @endforeach
+       </tbody>
+    </table>
 @else
   {{"No results match your search."}}
 @endif

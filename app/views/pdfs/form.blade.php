@@ -1,25 +1,22 @@
 @extends('layout.main')
 
 @section('content')
-@if(Session::has('newOutline'))
-    <script type="text/javascript">
-         var outline = window.open( {{$newOutline->path}}, '_blank');
-         outline.focus;
-       </script>
-@endif
+
 
 @if (Session::has('errors'))
   <span class="error">
-    Errors:
+    Oops! Almost. Fix these:
     <ul>
     @foreach($errors->all() as $error)
         <li>{{ $error }}</li>
     @endforeach
-    <li></li>
     </ul>
   </span>
 @endif
 {{ Form::open(array('action' => 'CourseOutlineController@store')) }}
+{{--@if(Session::has('outline'))--}}
+{{--{{ Form::hidden('new_outline', $outline->path) }}--}}
+{{--@endif--}}
    <div class="row">
       <div class="small-12 large-6 columns">
          <fieldset>
@@ -66,4 +63,8 @@
       </div>
    </div>
 {{ Form::close() }}
+@stop
+
+@section('extra-js')
+
 @stop

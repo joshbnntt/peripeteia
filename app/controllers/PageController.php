@@ -73,7 +73,8 @@ class PageController extends BaseController {
 			}
 		}
 
-		return Response::json($results);
+//		return Response::json($results);
+        return Redirect::back()->with('preFilterText' , $search)->with('filterText', $results);
 	}
 	public function testCourseNameSearch()
 	{
@@ -89,7 +90,8 @@ class PageController extends BaseController {
 			}
 		}
 
-		return Response::json($results);
+//		return Response::json($results);
+        return Redirect::back()->withPreFilterText($results);
 	}
 	public function testDescriptionSearch()
 	{
@@ -97,6 +99,7 @@ class PageController extends BaseController {
 		$description = Outline::find($search);
 		
 
-		return Response::json($description);
+//		return Response::json($description);
+        return Redirect::back()->withPreFilterText($description);
 	}
 }

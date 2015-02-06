@@ -32,23 +32,19 @@ class CourseOutlineController extends BaseController {
 	 */
 	public function store()
 	{
-		Validator::extend('alpha_space', function($attr, $value) {
-    		return preg_match('/^([a-zA-Z0-9\x20])+$/', $value);
-		});
         $new_outline = [];
 		$submitted_info = Input::all();
 		$rules = [
-			'course_outcomes'      => 'required|alpha_space|max:500',
-			'course_name'          => 'required|alpha_space',
+			'course_outcomes'      => 'required|alphaSpace|max:500',
+			'course_name'          => 'required|alphaSpace',
 			'credit_hours'         => 'required|numeric',
-			'instructor_name'      => 'required|alpha_space',
-			'office_location'      => 'required|alpha_space',
-			'office_hours'         => 'required|alpha_space',
+			'instructor_name'      => 'required|alphaSpace',
+			'office_location'      => 'required|alphaSpace',
+			'office_hours'         => 'required|alphaSpace',
 			'email'                => 'required|email',
-			'course_description'   => 'required|alpha_space',
-			'course_prerequisites' => 'required|alpha_space',
-			'course_texts'         => 'required|alpha_space',
-			'course_outcomes'      => 'required|alpha_space'
+			'course_prerequisites' => 'required|alphaSpace',
+			'course_texts'         => 'required|alphaSpace',
+			'course_outcomes'      => 'required|alphaSpace'
 		];
 		$validator = Validator::make($submitted_info, $rules);
 
@@ -62,9 +58,9 @@ class CourseOutlineController extends BaseController {
         $new_outline = [
             'path' => '/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf'
         ];
-//		return Response::json('/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
-//      return Redirect::to('/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
-        return Redirect::to('courseoutline/create')->withNewOutline($new_outline);
+
+        return Redirect::to('/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
+//        return Redirect::to('courseoutline/create')->withOutline($new_outline);
 	}
 
 	/**
