@@ -20,6 +20,7 @@ class UserController extends BaseController
 
     public function search()
     {
+        $preFilterText = '';
         $rules = [
             'filter_text' => array('required', 'regex:/^\s*[a-zA-Z]+\s*[a-zA-Z]*\s*$/')
         ];
@@ -32,7 +33,7 @@ class UserController extends BaseController
         $validator = Validator::make(Input::all(), $rules, $messages);
 
         if($validator->fails()) {
-            return Response::json(['errors' => $validator->errors()]);
+            return Redirect::back()->withErrors($validator);
         } else {
             $filterText = Input::all();
             //$searchFilter = Input::all();
@@ -51,7 +52,9 @@ class UserController extends BaseController
                     ->get();
             }
 
-            return Response::json($users);
+//            return Response::json($users);
+            return Redirect::action('UserController@index')
+                ->with('users', $users);
 
         }
 

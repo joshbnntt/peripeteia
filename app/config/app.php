@@ -125,6 +125,7 @@ return array(
       'Barryvdh\DomPDF\ServiceProvider',
       'Barryvdh\Cors\CorsServiceProvider',
       'Dingo\Api\ApiServiceProvider',
+        'ValidationExtensionServiceProvider'
 	),
 
 	/*

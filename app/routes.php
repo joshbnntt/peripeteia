@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -18,36 +17,68 @@
 */
 App::missing(function($exception)
 {
-   return View::make('index');
-   //return Redirect::to('/');//Response::make('Page not found', 404);
+   // return View::make('index');
+   Response::make('Page not found', 404); //return Redirect::to('/');
 });
 
 /*
 |--------------------------------------------------------------------------
-| Angular Routes
+| Page Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', function()
-{
-   return View::make('index'); // will return app/views/index.php
-});
+Route::get ('/',[
+    'before' => 'auth',
+    'uses' => 'PageController@index'
+]);
 
 /*
 |--------------------------------------------------------------------------
-| API v1 Routes
+| Course Outline Routes
 |--------------------------------------------------------------------------
 */
-Route::api(['version' => 'v1', 'prefix' => 'api', 'protected' => true], function()
+Route::group(array('before' => 'auth'), function()
 {
-   Route::post('login',                ['uses' => 'AuthController@validate', 'protected' => false]);
-   Route::get('logout',                ['uses' => 'AuthController@logout']);
-   Route::post('display',              ['uses' => 'PageController@display']);
-   Route::get('testCourseSearch',      ['uses' => 'PageController@testCourseNameSearch']);
-   Route::get('testInstructorSearch',  ['uses' => 'PageController@testInstructorSearch']);
-   Route::get('testDescriptionSearch', ['uses' => 'PageController@testDescriptionSearch']);
-   Route::get('courseoutline/create',  ['uses' => 'CourseOutlineController@create']);
-   Route::post('courseoutline/store',  ['uses' => 'CourseOutlineController@store']);
-   Route::get('courseoutline/show',    ['uses' => 'CourseOutlineController@show']);
-   Route::get('directory',             ['uses' => 'UserController@index']);
-   Route::post('directory/search',     ['uses' => 'UserController@search']);
+    Route::get ('courseoutline/create', array(
+            'uses' => 'CourseOutlineController@create'
+        )
+    );
+    Route::get ('courseoutline/show', array(
+            'uses' => 'CourseOutlineController@show'
+        )
+    );
+    Route::post('courseoutline/store', array(
+            'uses' => 'CourseOutlineController@store'
+        )
+    );
+    Route::post('courseoutline/display', function()
+    {
+        View::make('pdfs/display');
+    });
 });
+/*
+|--------------------------------------------------------------------------
+| Directory  Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('directory', 'UserController@index');
+Route::post('directory/search', 'UserController@search');
+/*
+|--------------------------------------------------------------------------
+| Auth Routes
+|--------------------------------------------------------------------------
+*/
+//Route::get('login', 'AuthController@create');
+Route::get('login', [
+    'as' => 'login_path',
+    'uses' => 'AuthController@create'
+]);
+Route::post('login', [
+    'as' => 'login_path',
+    'uses' => 'AuthController@validate'
+]);
+Route::get ('logout', array(
+        'as' => 'logout_path',
+        'before' => 'auth',
+        'uses' => 'AuthController@logout'
+    )
+);

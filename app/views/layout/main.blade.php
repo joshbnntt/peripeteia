@@ -27,6 +27,7 @@
 
       <!-- Page scripts -->
       <script src="{{ elixir("js/all.js") }}"></script>
+      {{ HTML::script('js/jquery-1.11.1.min.js'); }}
       @yield('extra-js')
    </body>
 </html>
