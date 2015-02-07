@@ -15,6 +15,7 @@
                <li class="divider"></li>
                <li><a href="{{ URL::to('courseoutline/create') }}">Create an Outline</a></li>
                <li class="divider"></li>
+               <li><a href="{{ URL::to('directory') }}">Teacher Directory</a></li>
             </ul>
          @endif
         <!-- Right Nav Section -->

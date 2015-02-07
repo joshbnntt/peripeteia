@@ -49,18 +49,18 @@ class CourseOutlineController extends BaseController {
 		$validator = Validator::make($submitted_info, $rules);
 
 		if($validator->fails()) {
-//			return Response::json(['errors' => $validator->errors()]);
-            return Redirect::to('courseoutline/create')->withErrors($validator)->withInput($submitted_info);
+         return Redirect::to('courseoutline/create')->withErrors($validator)->withInput($submitted_info);
 		}
-		$submitted_info['course_outcomes'] = explode("\n", $submitted_info['course_outcomes']);
-		PDF::loadView('pdfs.test',
-	      array('submitted_info' => $submitted_info))->save(public_path().'/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
-        $new_outline = [
-            'path' => '/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf'
-        ];
 
-        return Redirect::to('/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
-//        return Redirect::to('courseoutline/create')->withOutline($new_outline);
+		$submitted_info['course_outcomes'] = explode("\n", $submitted_info['course_outcomes']);
+
+		PDF::loadView('pdfs.test', array('submitted_info' => $submitted_info))
+			->save(public_path().'/courseoutlines/'.studly_case($submitted_info['course_name']).'.pdf');
+
+     $new_outline = [
+         'name' => studly_case($submitted_info['course_name'])
+     ];
+        return View::make('pdfs/display', array('outline' => $new_outline));
 	}
 
 	/**

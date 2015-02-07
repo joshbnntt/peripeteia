@@ -50,6 +50,10 @@ Route::group(array('before' => 'auth'), function()
             'uses' => 'CourseOutlineController@store'
         )
     );
+    Route::post('courseoutline/display', function()
+    {
+        View::make('pdfs/display');
+    });
 });
 /*
 |--------------------------------------------------------------------------
