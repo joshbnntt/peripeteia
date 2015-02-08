@@ -14,29 +14,6 @@ class AuthController extends BaseController {
 	}
 
 	/**
-	 * Store a newly created resource in storage.
-	 * POST /auth
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 * GET /auth/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
 	 * Validate the entered use credentials
 	 * POST /login
 	 *
@@ -77,7 +54,7 @@ class AuthController extends BaseController {
 	public function logout()
 	{
 		Auth::logout();
-		return Redirect::to('login');
+		return Redirect::to('/');
 	}
 
 }

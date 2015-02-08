@@ -26,7 +26,11 @@ App::missing(function($exception)
 | Page Routes
 |--------------------------------------------------------------------------
 */
-Route::get ('/',[
+Route::get('/', [
+   'as' => 'splash_page',
+    'uses' => 'PageController@splash'
+]);
+Route::get ('/home',[
     'before' => 'auth',
     'uses' => 'PageController@index'
 ]);
@@ -61,7 +65,10 @@ Route::group(array('before' => 'auth'), function()
 |--------------------------------------------------------------------------
 */
 Route::get('directory', 'UserController@index');
-Route::post('directory/search', 'UserController@search');
+Route::post('directory/search', [
+    'as' => 'Instructor_search_path',
+    'uses' => 'SearchController@instructorSearch'
+]);
 /*
 |--------------------------------------------------------------------------
 | Auth Routes

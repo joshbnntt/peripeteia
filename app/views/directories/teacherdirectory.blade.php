@@ -2,7 +2,7 @@
 
 
  @section('content')
- {{ Form::open(array('action' => 'UserController@search')) }}
+ {{ Form::open(array('route' => 'Instructor_search_path')) }}
 
 <div class="row search" style="margin-top:50px;">
   <div class=" small-12 columns">
