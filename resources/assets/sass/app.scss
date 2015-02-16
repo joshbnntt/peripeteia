@@ -1,0 +1,27 @@
+/*
+|--------------------------------------------------------------------------
+| Include Google's Material Design Color Pallette
+|--------------------------------------------------------------------------
+*/
+@import "app/color";
+
+/*
+|--------------------------------------------------------------------------
+| Include Bootstrap and Material Icons
+|--------------------------------------------------------------------------
+*/
+@import "bootstrap/bootstrap";
+@import "font/icons-material-design";
+@import "font/roboto";
+
+/*
+|--------------------------------------------------------------------------
+| Include App Components
+|--------------------------------------------------------------------------
+*/
+@import "app/components/mixins";
+@import "app/components/shadows";
+@import "app/components/input-groups";
+@import "app/components/buttons";
+@import "app/components/navbar";
+@import "app/components/global";

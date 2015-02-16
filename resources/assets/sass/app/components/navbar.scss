@@ -1,0 +1,43 @@
+.navbar-default {
+	@extend .light-blue.darken-2;
+	border: 0;
+	border-radius: 0;
+
+	form input {
+		@extend .light-blue.darken-1;
+		@extend .white-text;
+		box-shadow: none;
+		@include placeholder(#d9f0ff);
+		border-radius: 2px;
+		font-weight: 400;
+		height: 34px;
+		border: 0;
+		padding-bottom: 5px;
+
+		&:focus, &:hover {
+			@extend .light-blue;
+			@include placeholder(#fff);
+			box-shadow: none;
+		}
+	}
+
+	.form-group {
+		i {
+			color: #d9f0ff;
+			font-size: 1.5em;
+			position: relative;
+			bottom: 3px;
+		}
+
+		&:hover {
+			i {
+				@extend .white-text;
+			}
+		}
+	}
+
+	.navbar-search {
+		margin-top: 11px;
+
+	}
+}

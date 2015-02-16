@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Peri
+        psr4_prefix: Peri
+        src_path: app
