@@ -17,7 +17,7 @@
                      <tr>
                         <td>{{ $course_names[$iterator] }}</td>
                         <td>{{ HTML::link('courseoutlines/'
-                                          .$course_outlines[$iterator], 'Open') }}</td>
+                                          .$course_outlines[$iterator], 'Open', array('target' => '_blank')) }}</td>
                      </tr>
                   @endfor
                </tbody>

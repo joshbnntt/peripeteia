@@ -39,8 +39,7 @@ class AuthController extends BaseController {
 
         if(Auth::attempt($userdata))
         {
-//            Flash::message('Welcome Back!');
-            return Redirect::intended('/');
+            return Redirect::intended('/home');
         }
 		
 	}
