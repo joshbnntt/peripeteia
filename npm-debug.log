@@ -1,0 +1,207 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.36
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json @ No description
+6 warn package.json @ No repository field.
+7 warn package.json @ No README data
+8 verbose readDependencies using package.json deps
+9 verbose install where, deps [ 'C:\\Users\\Josh\\Code\\peri', [ 'gulp', 'laravel-elixir' ] ]
+10 info preinstall @
+11 verbose readDependencies using package.json deps
+12 verbose cache add [ 'gulp@^3.8.8', null ]
+13 verbose cache add name=undefined spec="gulp@^3.8.8" args=["gulp@^3.8.8",null]
+14 verbose parsed url { protocol: null,
+14 verbose parsed url   slashes: null,
+14 verbose parsed url   auth: null,
+14 verbose parsed url   host: null,
+14 verbose parsed url   port: null,
+14 verbose parsed url   hostname: null,
+14 verbose parsed url   hash: null,
+14 verbose parsed url   search: null,
+14 verbose parsed url   query: null,
+14 verbose parsed url   pathname: 'gulp@^3.8.8',
+14 verbose parsed url   path: 'gulp@^3.8.8',
+14 verbose parsed url   href: 'gulp@^3.8.8' }
+15 verbose cache add [ 'laravel-elixir@*', null ]
+16 verbose cache add name=undefined spec="laravel-elixir@*" args=["laravel-elixir@*",null]
+17 verbose parsed url { protocol: null,
+17 verbose parsed url   slashes: null,
+17 verbose parsed url   auth: null,
+17 verbose parsed url   host: null,
+17 verbose parsed url   port: null,
+17 verbose parsed url   hostname: null,
+17 verbose parsed url   hash: null,
+17 verbose parsed url   search: null,
+17 verbose parsed url   query: null,
+17 verbose parsed url   pathname: 'laravel-elixir@*',
+17 verbose parsed url   path: 'laravel-elixir@*',
+17 verbose parsed url   href: 'laravel-elixir@*' }
+18 verbose cache add name="gulp" spec="^3.8.8" args=["gulp","^3.8.8"]
+19 verbose parsed url { protocol: null,
+19 verbose parsed url   slashes: null,
+19 verbose parsed url   auth: null,
+19 verbose parsed url   host: null,
+19 verbose parsed url   port: null,
+19 verbose parsed url   hostname: null,
+19 verbose parsed url   hash: null,
+19 verbose parsed url   search: null,
+19 verbose parsed url   query: null,
+19 verbose parsed url   pathname: '^3.8.8',
+19 verbose parsed url   path: '^3.8.8',
+19 verbose parsed url   href: '^3.8.8' }
+20 verbose addNamed [ 'gulp', '^3.8.8' ]
+21 verbose addNamed [ null, '>=3.8.8-0 <4.0.0-0' ]
+22 verbose cache add name="laravel-elixir" spec="*" args=["laravel-elixir","*"]
+23 verbose parsed url { protocol: null,
+23 verbose parsed url   slashes: null,
+23 verbose parsed url   auth: null,
+23 verbose parsed url   host: null,
+23 verbose parsed url   port: null,
+23 verbose parsed url   hostname: null,
+23 verbose parsed url   hash: null,
+23 verbose parsed url   search: null,
+23 verbose parsed url   query: null,
+23 verbose parsed url   pathname: '*',
+23 verbose parsed url   path: '*',
+23 verbose parsed url   href: '*' }
+24 verbose addNamed [ 'laravel-elixir', '*' ]
+25 verbose addNamed [ null, '*' ]
+26 silly lockFile ed47fb09-gulp-3-8-8 gulp@^3.8.8
+27 verbose lock gulp@^3.8.8 C:\Users\Josh\AppData\Roaming\npm-cache\ed47fb09-gulp-3-8-8.lock
+28 silly lockFile 84c72bf4-laravel-elixir laravel-elixir@*
+29 verbose lock laravel-elixir@* C:\Users\Josh\AppData\Roaming\npm-cache\84c72bf4-laravel-elixir.lock
+30 silly addNameRange { name: 'gulp', range: '>=3.8.8-0 <4.0.0-0', hasData: false }
+31 silly addNameRange { name: 'laravel-elixir', range: '*', hasData: false }
+32 verbose request where is /laravel-elixir
+33 verbose request registry https://registry.npmjs.org/
+34 verbose request id 760edfefe670ef67
+35 verbose url raw /laravel-elixir
+36 verbose url resolving [ 'https://registry.npmjs.org/', './laravel-elixir' ]
+37 verbose url resolved https://registry.npmjs.org/laravel-elixir
+38 verbose request where is https://registry.npmjs.org/laravel-elixir
+39 info trying registry request attempt 1 at 19:29:04
+40 http GET https://registry.npmjs.org/laravel-elixir
+41 verbose request where is /gulp
+42 verbose request registry https://registry.npmjs.org/
+43 verbose url raw /gulp
+44 verbose url resolving [ 'https://registry.npmjs.org/', './gulp' ]
+45 verbose url resolved https://registry.npmjs.org/gulp
+46 verbose request where is https://registry.npmjs.org/gulp
+47 info trying registry request attempt 1 at 19:29:04
+48 verbose etag "F0M2QJQZ5NLU0EC1WYOQX1LOS"
+49 http GET https://registry.npmjs.org/gulp
+50 info retry will retry, error on last attempt: Error: CERT_UNTRUSTED
+51 info retry will retry, error on last attempt: Error: CERT_UNTRUSTED
+52 info trying registry request attempt 2 at 19:29:18
+53 verbose etag "F0M2QJQZ5NLU0EC1WYOQX1LOS"
+54 http GET https://registry.npmjs.org/gulp
+55 info trying registry request attempt 2 at 19:29:18
+56 http GET https://registry.npmjs.org/laravel-elixir
+57 info retry will retry, error on last attempt: Error: CERT_UNTRUSTED
+58 info retry will retry, error on last attempt: Error: CERT_UNTRUSTED
+59 info trying registry request attempt 3 at 19:30:20
+60 verbose etag "F0M2QJQZ5NLU0EC1WYOQX1LOS"
+61 http GET https://registry.npmjs.org/gulp
+62 info trying registry request attempt 3 at 19:30:20
+63 http GET https://registry.npmjs.org/laravel-elixir
+64 silly lockFile 84c72bf4-laravel-elixir laravel-elixir@*
+65 silly lockFile 84c72bf4-laravel-elixir laravel-elixir@*
+66 silly registry.get cb [ 304, undefined ]
+67 verbose etag https://registry.npmjs.org/gulp from cache
+68 silly addNameRange number 2 { name: 'gulp', range: '>=3.8.8-0 <4.0.0-0', hasData: true }
+69 silly addNameRange versions [ 'gulp',
+69 silly addNameRange   [ '0.0.1',
+69 silly addNameRange     '0.0.2',
+69 silly addNameRange     '0.0.3',
+69 silly addNameRange     '0.0.4',
+69 silly addNameRange     '0.0.5',
+69 silly addNameRange     '0.0.7',
+69 silly addNameRange     '0.0.8',
+69 silly addNameRange     '0.0.9',
+69 silly addNameRange     '0.1.0',
+69 silly addNameRange     '0.2.0',
+69 silly addNameRange     '1.0.0',
+69 silly addNameRange     '1.1.0',
+69 silly addNameRange     '1.2.0',
+69 silly addNameRange     '1.2.1',
+69 silly addNameRange     '2.0.0',
+69 silly addNameRange     '2.0.1',
+69 silly addNameRange     '2.1.0',
+69 silly addNameRange     '2.2.0',
+69 silly addNameRange     '2.3.0',
+69 silly addNameRange     '2.4.0',
+69 silly addNameRange     '2.4.1',
+69 silly addNameRange     '2.6.0',
+69 silly addNameRange     '2.6.1',
+69 silly addNameRange     '2.7.0',
+69 silly addNameRange     '3.0.0',
+69 silly addNameRange     '3.1.1',
+69 silly addNameRange     '3.1.2',
+69 silly addNameRange     '3.1.3',
+69 silly addNameRange     '3.1.4',
+69 silly addNameRange     '3.2.0',
+69 silly addNameRange     '3.2.1',
+69 silly addNameRange     '3.2.2',
+69 silly addNameRange     '3.2.3',
+69 silly addNameRange     '3.2.4',
+69 silly addNameRange     '3.2.5',
+69 silly addNameRange     '3.3.0',
+69 silly addNameRange     '3.3.1',
+69 silly addNameRange     '3.3.2',
+69 silly addNameRange     '3.3.4',
+69 silly addNameRange     '3.4.0',
+69 silly addNameRange     '3.5.0',
+69 silly addNameRange     '3.5.1',
+69 silly addNameRange     '3.5.2',
+69 silly addNameRange     '3.5.5',
+69 silly addNameRange     '3.5.6',
+69 silly addNameRange     '3.6.0',
+69 silly addNameRange     '3.6.1',
+69 silly addNameRange     '3.6.2',
+69 silly addNameRange     '3.7.0',
+69 silly addNameRange     '3.8.0',
+69 silly addNameRange     '3.8.1',
+69 silly addNameRange     '3.8.2',
+69 silly addNameRange     '3.8.3',
+69 silly addNameRange     '3.8.4',
+69 silly addNameRange     '3.8.5',
+69 silly addNameRange     '3.8.6',
+69 silly addNameRange     '3.8.7',
+69 silly addNameRange     '3.8.8',
+69 silly addNameRange     '3.8.9',
+69 silly addNameRange     '3.8.10',
+69 silly addNameRange     '3.8.11' ] ]
+70 verbose addNamed [ 'gulp', '3.8.11' ]
+71 verbose addNamed [ '3.8.11', '3.8.11' ]
+72 silly lockFile 3d31ec08-gulp-3-8-11 gulp@3.8.11
+73 verbose lock gulp@3.8.11 C:\Users\Josh\AppData\Roaming\npm-cache\3d31ec08-gulp-3-8-11.lock
+74 silly lockFile 3d31ec08-gulp-3-8-11 gulp@3.8.11
+75 silly lockFile 3d31ec08-gulp-3-8-11 gulp@3.8.11
+76 silly lockFile ed47fb09-gulp-3-8-8 gulp@^3.8.8
+77 silly lockFile ed47fb09-gulp-3-8-8 gulp@^3.8.8
+78 error Error: CERT_UNTRUSTED
+78 error     at SecurePair.<anonymous> (tls.js:1381:32)
+78 error     at SecurePair.emit (events.js:92:17)
+78 error     at SecurePair.maybeInitFinished (tls.js:980:10)
+78 error     at CleartextStream.read [as _read] (tls.js:472:13)
+78 error     at CleartextStream.Readable.read (_stream_readable.js:341:10)
+78 error     at EncryptedStream.write [as _write] (tls.js:369:25)
+78 error     at doWrite (_stream_writable.js:226:10)
+78 error     at writeOrBuffer (_stream_writable.js:216:5)
+78 error     at EncryptedStream.Writable.write (_stream_writable.js:183:11)
+78 error     at write (_stream_readable.js:602:24)
+78 error     at flow (_stream_readable.js:611:7)
+78 error     at Socket.pipeOnReadable (_stream_readable.js:643:5)
+79 error If you need help, you may report this *entire* log,
+79 error including the npm and node versions, at:
+79 error     <http://github.com/npm/npm/issues>
+80 error System Windows_NT 6.1.7601
+81 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+82 error cwd C:\Users\Josh\Code\peri
+83 error node -v v0.10.36
+84 error npm -v 1.4.28
+85 verbose exit [ 1, true ]

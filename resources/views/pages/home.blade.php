@@ -24,7 +24,7 @@
                            <tr>
                               <td>{{ $course_names[$iterator] }}</td>
                               <td>
-                                <a href="courseoutlines/{{ $course_outlines[$iterator] }}" class="pull-right">View Outline</a>
+                                <a href="courseoutlines/{{ $course_outlines[$iterator] }}" class="pull-right" target="_blank">View Outline</a>
                               </td>
                            </tr>
                         @endfor
